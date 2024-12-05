@@ -1,0 +1,163 @@
+{% load static %}
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+<style>
+  /* Add a fade-out animation */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .fade-out {
+    animation: fadeOut 1s ease-in-out forwards; /* 1 second fade-out animation */
+  }
+</style>
+
+{% block body %}
+<section style="background:linear-gradient(45deg,#c05eaa,#67d1bc);">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img style="background-position:center; background-size: cover; background-repeat: no-repeat; border-radius: 50px;" src="{% static 'img/mobile-login-Cristina.jpg'%}" alt="register form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+               {% if messages %}
+                  <div id="message-container">
+                    {% for message in messages %}
+                      <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <form method="POST" id="register-form">
+                  {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                      {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+
+                  <!-- Fullname Field -->
+                  <div class="form-outline mb-3">
+                  <label class="form-label" for="{{ form.fullname.id_for_label }}">Fullname</label>
+                    {{ form.fullname }}
+                    {% if form.fullname.errors %}
+                      <div class="text-danger">
+                        {% for error in form.fullname.errors %}
+                          <small>{{ error }}</small>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  <!-- Email Field -->
+                  <div class="form-outline mb-3">
+                  <label class="form-label" for="{{ form.email.id_for_label }}">Email address</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                      <div class="text-danger">
+                        {% for error in form.email.errors %}
+                          <small>{{ error }}</small>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  <!-- Phone Number Field -->
+                  <div class="form-outline mb-3">
+                  <label class="form-label" for="{{ form.phone_number.id_for_label }}">Phone Number</label>
+                    {{ form.phone_number }}
+                    {% if form.phone_number.errors %}
+                      <div class="text-danger">
+                        {% for error in form.phone_number.errors %}
+                          <small>{{ error }}</small>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  <!-- Password Field -->
+                  <div class="form-outline mb-3">
+                  <label class="form-label" for="{{ form.password1.id_for_label }}">Password</label>
+                    {{ form.password1 }}
+                    {% if form.password1.errors %}
+                      <div class="text-danger">
+                        {% for error in form.password1.errors %}
+                          <p>{{ error }}</p>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  <!-- Confirm Password Field -->
+                  <div class="form-outline mb-3">
+                  <label class="form-label" for="{{ form.password2.id_for_label }}">Confirm Password</label>
+                    {{ form.password2 }}
+                    {% if form.password2.errors %}
+                      <div class="text-danger">
+                        {% for error in form.password2.errors %}
+                          <small>{{ error }}</small>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  <div class="pt-1 mb-3">
+                    <button class="btn w-100 btn-lg btn-block" type="submit" style="background-color:#0fa978; color: #F5F5F5">Register</button>
+                  </div>
+
+                  <p class="mb-2" style="color: #393f81;">Already Have An Account?
+                    <a href="{% url 'login' %}" style="color: #393f81;">Sign-In</a>
+                  </p>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const messageContainer = document.getElementById('message-container');
+    const form = document.getElementById('register-form');
+
+    if (messageContainer) {
+      setTimeout(() => {
+        // Apply fade-out animation
+        messageContainer.classList.add('fade-out');
+
+        // Redirect to login page after animation
+        setTimeout(() => {
+          const successMessage = document.querySelector('.alert-success');
+          if (successMessage) {
+            if (form) {
+              form.reset();
+            }
+            window.location.href = "{% url 'login' %}";
+          }
+        }, 1000); // Wait for the fade-out animation to complete
+      }, 2000); // 2 seconds before starting fade-out
+    }
+  });
+</script>
+
+{% endblock %}

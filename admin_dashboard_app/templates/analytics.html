@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<a href="#">{% block page %}Analytics Page {% endblock %}</a>
+{% block body %}
+<div class="container">
+
+            <div class="row">
+
+                 <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title">Revenues</div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container">
+                      <canvas id="lineChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title">Bookings</div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container">
+                      <canvas id="bubbleChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+    </div>
+
+
+{% endblock %}

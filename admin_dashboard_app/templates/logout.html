@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+<a href="#">{% block page %}Profile Page {% endblock %}</a>
+{% block body %}
+
+    <div class="d-flex align-items-center justify-content-center">
+
+    <p>Are you sure you want to Sign Out?</p>
+        <div>
+        <a href="{% url 'login' %}">Yes</a>
+        <a href="{% url 'admin-dashboard' %}">No</a>
+        </div>
+
+    </div>
+{% endblock %}
