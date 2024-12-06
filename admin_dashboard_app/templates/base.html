@@ -42,6 +42,10 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{% static 'css/demo.css' %}" />
+       <!--online fontawesome CDN link for icons-->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <!--chart js cdn link-->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -194,7 +198,7 @@
                   >
                     <div class="avatar-sm">
                       <img
-                        src="{% static 'img/profile.jpg' %}"
+                        src="{{ user.profile_picture }}"
                         alt="..."
                         class="avatar-img rounded-circle"
                       />
@@ -210,7 +214,7 @@
                         <div class="user-box">
                           <div class="avatar-lg">
                             <img
-                              src="{% static 'img/profile.jpg' %}"
+                              src="{{ user.profile_picture }}"
                               alt="image profile"
                               class="avatar-img rounded"
                             />
@@ -218,17 +222,12 @@
                           <div class="u-text">
                             <h4>{{ user.fullname }}</h4>
                             <p class="text-muted">{{ user.email }}</p>
-                            <a
-                              href="profile.html"
-                              class="btn btn-xs btn-secondary btn-sm"
-                              >View Profile</a
-                            >
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">My Profile</a>
+                        <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                       </li>
@@ -245,25 +244,6 @@
           <div class="page-inner">
             <div class="page-header">
                <h4 class="page-title">{% block page-title %}Dashboard{% endblock %}</h4>
-              <ul class="breadcrumbs">
-                <li class="nav-home">
-                  <a href="#">
-                    <i class="icon-home"></i>
-                  </a>
-                </li>
-                <li class="separator">
-                  <i class="icon-arrow-right"></i>
-                </li>
-                <li class="nav-item">
-                  <a href="#">Pages</a>
-                </li>
-                <li class="separator">
-                  <i class="icon-arrow-right"></i>
-                </li>
-                <li class="nav-item">
-                  <a href="#">{% block page %}Starter Page {% endblock %}</a>
-                </li>
-              </ul>
             </div>
             <div class="page-category">
                 {% block body %}
@@ -275,9 +255,9 @@
 
 
 
-        <footer class="footer">
-         <div>Copyright Tourify</div>
-        </footer>
+{#        <footer class="footer">#}
+{#         <div>Copyright Tourify</div>#}
+{#        </footer>#}
       </div>
     </div>
     <!--   Core JS Files   -->

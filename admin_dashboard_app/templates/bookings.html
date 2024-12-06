@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-<a href="#">{% block page %}Bookings Page {% endblock %}</a>
+<h4 class="page-title">{% block page-title %}Analytics{% endblock %}</h4>
 {% block body %}
 <div class="col-md-12">
                 <div class="card">
@@ -149,21 +149,35 @@
                     <div class="table-responsive">
                       <table
                         id="add-row"
-                        class="display table table-striped table-hover"
+                        class="display table "
                       >
                         <thead>
                           <tr>
-                            <th>Title</th>
-                            <th>Destination</th>
-                            <th>Duration</th>
-                            <th>Capacity</th>
-                            <th>Type</th>
+                            <th>Client</th>
+                            <th>Package</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Slots</th>
+                            <th>Price</th>
                             <th style="width: 10%">Action</th>
                           </tr>
                         </thead>
 
                         <tbody>
+                        {% for bk in bookings %}
+                          <tr>
 
+                                  <td>{{ bk.user.email }}</td>
+                                  <td>{{ bk.tour.title }}</td>
+                                  <td>{{ bk.booking_date }}</td>
+                                  <td>{{ bk.status }}</td>
+                                  <td>{{ bk.slots_booked }}</td>
+                                  <td>{{ bk.total_price }}</td>
+                                  <td>
+                                      <a href="#" class="btn btn-secondary">View</a>
+                                  </td>
+                          </tr>
+                         {% endfor %}
                         </tbody>
                       </table>
                     </div>

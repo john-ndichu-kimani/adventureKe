@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #e39172;
+    --primary: #16e495;
     --secondary: #FE8800;
     --light: #F5F5F5;
     --dark: #14141F;
@@ -69,7 +69,7 @@
     position: relative;
     margin-right: 25px;
     padding: 35px 0;
-    color: #FFFFFF !important;
+    color: rgba(12, 12, 12, 0.94) !important;
     font-size: 18px;
     font-weight: 600;
     outline: none;
@@ -158,8 +158,8 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background:linear-gradient(45deg,#c05eaa,#67d1bc);
-    /*background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/hikers-mountains.jpg);*/
+   background:linear-gradient(45deg,#c05eaa,#67d1bc);
+    /*background: linear-gradient(rgba(16, 24, 26, 0.32), rgba(10, 51, 23, 0.97)), url(../img/hero_bg_img.jpg);*/
     /*background-position: center center;*/
     /*background-repeat: no-repeat;*/
     /*background-size: cover;*/
@@ -230,13 +230,54 @@
 
 
 /*** Destination ***/
-.destination img {
-    transition: .5s;
-}
+.destination-card {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+        }
 
-.destination a:hover img {
-    transform: scale(1.1);
-}
+        .destination-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .destination-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: white;
+        }
+
+        .destination-card:hover .destination-overlay {
+            opacity: 1;
+        }
+
+        .destination-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .destination-text {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .destination-card:hover .destination-text {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
 
 /*** Package ***/

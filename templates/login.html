@@ -18,20 +18,23 @@
   }
 </style>
 {% block body %}
-<section style="background:linear-gradient(45deg,#c05eaa,#67d1bc);">
+<section style="background:linear-gradient(45deg,#c05eaa,#67d1bc);height: 100%">
   <div class="container py-5">
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col col-xl-10">
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
-
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img style="background-position:center; background-size: cover; background-repeat: no-repeat; border-radius: 50px;" src="{% static 'img/mobile-login-Cristina.jpg'%}"
+                <div>
+                     <a class="p-5 fs-4 fw-bold text-center" style="color: #0fa978; cursor: pointer" href="{% url 'index' %}">Touri<span class="text-warning">fy</span></a>
+                    <img style="background-position:center; background-size: cover; background-repeat: no-repeat; border-radius: 50px;" src="{% static 'img/mobile-login-Cristina.jpg'%}"
                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                </div>
+
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-
+                <h3 class="text-center py-3">Welcome back! ✨</h3>
                 <form method="POST" id="login-form">
                  {% csrf_token %}
                  {% if messages %}

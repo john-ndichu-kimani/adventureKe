@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout, get_user_model
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 from .forms import UserRegistrationForm
-from .models import User, Tour, Booking
+from .models import User, Tour, Booking, Destination
 
 
 # Create your views here.
@@ -102,3 +102,32 @@ def admin_dashboard(request):
         'total_bookings': total_bookings
     }
     return render(request, 'admin_dashboard.html', context)
+
+def create_tour(request):
+    if request.method == "POST":
+     
+        new_tour = Tour(
+            title = request.POST['title'],
+            description = request.POST['description'],
+            destination = request.POST['destination'],
+            start_date = request.POST['start_date'],
+            end_date = request.POST['end_date'],
+            price = request.POST['price'],
+            min_group_size=request.POST['min_group_size'],
+            max_group_size=request.POST['max_group_size'],
+            available_slots=request.POST['available_slots'],
+            featured_image=request.FILES['featured_image'],
+        )
+        new_tour.save()
+        return redirect('tours-manage')
+
+
+def delete_tour(request, pk):
+    tour = Tour.objects.get(pk=pk)
+    tour.delete()
+    return redirect('tours-manage')
+
+def view_tour(request, pk):
+    tour = Tour.objects.get(pk=pk)
+    context = {'tour': tour}
+    return render(request,'single-tour')

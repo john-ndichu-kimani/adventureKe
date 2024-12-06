@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-<a href="#">{% block page %}Guides Page {% endblock %}</a>
+<h4 class="page-title">{% block page-title %}Tour Guides{% endblock %}</h4>
 {% block body %}
 <div class="col-md-12">
                 <div class="card">
@@ -11,7 +11,7 @@
                         data-bs-target="#addRowModal"
                       >
                         <i class="fa fa-plus"></i>
-                        Add Tour
+                        New Guide
                       </button>
                     </div>
                   </div>
@@ -145,28 +145,37 @@
                         </div>
                       </div>
                     </div>
+                      <div class="table-responsive">
+        <table
+    id="add-row"
+    class="display table"
+  >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Designation</th>
+        <th style="width: 20%">Action</th>
+      </tr>
+    </thead>
 
-                    <div class="table-responsive">
-                      <table
-                        id="add-row"
-                        class="display table table-striped table-hover"
-                      >
-                        <thead>
-                          <tr>
-                            <th>Title</th>
-                            <th>Destination</th>
-                            <th>Duration</th>
-                            <th>Capacity</th>
-                            <th>Type</th>
-                            <th style="width: 10%">Action</th>
-                          </tr>
-                        </thead>
-
-                        <tbody>
-
-                        </tbody>
-                      </table>
-                    </div>
+    <tbody>
+      {% for guide in guides %}
+        <tr>
+          <td>{{ guide.name }}</td>
+          <td>{{ guide.email }}</td>
+          <td>{{ guide.phone_number }}</td>
+          <td>{{ guide.designation }}</td>
+          <td>
+              <i class="fa fa-eye text-secondary" aria-hidden="true"></i>
+              <i class="fa fa-trash text-danger ms-2" aria-hidden="true"></i>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
                   </div>
                 </div>
               </div>

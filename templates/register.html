@@ -27,7 +27,11 @@
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img style="background-position:center; background-size: cover; background-repeat: no-repeat; border-radius: 50px;" src="{% static 'img/mobile-login-Cristina.jpg'%}" alt="register form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+               <div>
+                     <a class="p-5 fs-4 fw-bold text-center" style="color: #0fa978; cursor: pointer" href="{% url 'index' %}">Touri<span class="text-warning">fy</span></a>
+                    <img style="background-position:center; background-size: cover; background-repeat: no-repeat; border-radius: 50px;" src="{% static 'img/mobile-login-Cristina.jpg'%}"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                </div>
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
@@ -41,7 +45,7 @@
                     {% endfor %}
                   </div>
                 {% endif %}
-
+              <h5 class="text-center py-3">Create An Account</h5>
                 <form method="POST" id="register-form">
                   {% csrf_token %}
 
