@@ -45,8 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'adventureApp',
     'admin_dashboard_app',
-    'user_dashboard_app'
+    'user_dashboard_app',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

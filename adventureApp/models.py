@@ -117,8 +117,12 @@ class Tour(models.Model):
     featured_image = models.ImageField(upload_to='images/', blank=True, null=True)
     average_rating = models.FloatField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
     reviews_count = models.PositiveIntegerField(default=0)
-    max_group_size = models.PositiveIntegerField(validators=[MinValueValidator(1)])
+    max_group_size = models.PositiveIntegerField(
+        validators=[MinValueValidator(1)],
+        help_text="Maximum number of participants for this tour"
+    )
     min_group_size = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)])
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['start_date']
@@ -128,9 +132,21 @@ class Tour(models.Model):
     def __str__(self):
         return self.title
 
+    def get_booked_slots(self):
+        """
+        Calculate total booked slots for the tour
+        with confirmed bookings.
+        """
+        return self.bookings.filter(
+            status='CONFIRMED'
+        ).aggregate(
+            total_slots=models.Sum('slots_booked')
+        )['total_slots'] or 0
+
     def is_available(self):
         """Check if the tour has available slots."""
         return self.available_slots > 0
+
 
     def clean(self):
         """
@@ -154,6 +170,7 @@ class Booking(models.Model):
     status = models.CharField(max_length=10, choices=BOOKING_STATUS_CHOICES, default='PENDING')
     slots_booked = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)])
     total_price = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['-booking_date']

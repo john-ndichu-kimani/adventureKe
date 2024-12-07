@@ -12,8 +12,7 @@ urlpatterns = [
     path('testimonials/', views.testimonial, name='testimonial'),
     path('register/', views.user_register, name='register'),
     path('login/', views.user_login, name='login'),
-    path('user-dashboard/', views.user_dashboard, name='user-dashboard'),
-    path('admin_dashboard_app-dashboard/', views.admin_dashboard, name='admin_dashboard_app-dashboard'),
+
     path('logout/', views.user_logout, name='logout'),
     path('not-found/', views.not_found, name='not_found'),
 

@@ -1,0 +1,56 @@
+{% extends 'user_base.html' %}
+
+{% block body %}
+<div class="container mt-4 bg-white h-75 rounded-3">
+    <h2 class="text-center py-3">My Bookings</h2>
+
+    {% if bookings %}
+        <table class="table table-responsive mt-3">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Slots</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Booking Date</th>
+                    <th>Actions</th>`
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.tour.title }}</td>
+                    <td>{{ booking.slots_booked }}</td>
+                    <td>KES {{ booking.total_price }}</td>
+                    <td>
+                        <span class="badge
+                            {% if booking.status == 'PENDING' %}bg-warning
+                            {% elif booking.status == 'CONFIRMED' %}bg-success
+                            {% else %}bg-danger{% endif %}">
+                            {{ booking.get_status_display }}
+                        </span>
+                    </td>
+                    <td>{{ booking.booking_date }}</td>
+                    <td class="g-2">
+                        {% if booking.status in 'PENDING,CONFIRMED' %}
+                        <form method="post" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <small>cancel</small>
+                            </button>
+                        </form>
+                        {% endif %}
+
+                       <button class="m-2 btn btn-secondary btn-sm" href="{% url 'single-tour' booking.tour.id %}"><small>view</small></button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-info">
+            You have no bookings yet. Explore our tours and book your adventure!
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

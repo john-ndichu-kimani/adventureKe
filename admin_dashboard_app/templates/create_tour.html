@@ -1,0 +1,145 @@
+
+              <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm-12">
+                    <label for="title">Title</label>
+                    <input
+                      id="title"
+                      type="text"
+                      name="title"
+                      class="form-control"
+                      placeholder="Enter tour title"
+                      required="required"
+                    />
+                  </div>
+                  <div class="col-sm-12">
+                    <label for="description">Description</label>
+                    <textarea
+                      id="description"
+                      name="description"
+                      class="form-control"
+                      placeholder="Provide tour description"
+                      required="required"
+                    ></textarea>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="price">Price (KES)</label>
+                    <input
+                      id="price"
+                      name="price"
+                      type="number"
+                      step="0.01"
+                      min="0"
+                      class="form-control"
+                      required="required"
+                    />
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="destination">Destination</label>
+                    <select
+                      class="form-control"
+                      name="destinations"
+                      id="destination"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Choose destination...
+                      </option>
+                      {% for location in destinations %}
+                      <option value="{{ location.id }}">
+                        {{ location.name }}
+                      </option>
+                      {% endfor %}
+                    </select>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="start_date">Start Date</label>
+                    <input
+                      id="start_date"
+                      name="start_date"
+                      type="date"
+                      class="form-control"
+                      required="required"
+                    />
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="end_date">End Date</label>
+                    <input
+                      id="end_date"
+                      name="end_date"
+                      type="date"
+                      class="form-control"
+                      required="required"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="max_group_size">Max Group Size</label>
+                    <input
+                      id="max_group_size"
+                      name="max_group_size"
+                      type="number"
+                      min="1"
+                      class="form-control"
+                      required="required"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="min_group_size">Min Group Size</label>
+                    <input
+                      id="min_group_size"
+                      name="min_group_size"
+                      type="number"
+                      min="1"
+                      class="form-control"
+                      required="required"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="slots">Available Slots</label>
+                    <input
+                      id="slots"
+                      name="slots"
+                      type="number"
+                      min="0"
+                      class="form-control"
+                      required="required"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="image">Featured Image</label>
+                    <input
+                      id="image"
+                      type="file"
+                      name="featured_image"
+                      class="form-control"
+                      accept="image/*"
+                    />
+                  </div>
+                </div>
+
+                <div class="modal-footer border-0">
+                  <button
+                    type="submit"
+                    id="addRowButton"
+                    class="btn btn-secondary"
+                  >
+                    Add Tour
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </form>

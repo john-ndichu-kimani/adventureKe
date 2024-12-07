@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import User
+from .models import User, Booking
+
 
 class UserRegistrationForm(UserCreationForm):
     password1 = forms.CharField(
@@ -48,3 +49,50 @@ class UserRegistrationForm(UserCreationForm):
         if not phone_number.isdigit():
             raise forms.ValidationError("Phone number must contain only digits")
         return phone_number
+
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = ['slots_booked']
+        widgets = {
+            'slots_booked': forms.NumberInput(attrs={
+                'class': 'form-control',
+                'min': 1,
+                'max': 10
+            })
+        }
+
+    def __init__(self, *args, **kwargs):
+        self.tour = kwargs.pop('tour', None)
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+
+    def clean_slots_booked(self):
+        slots = self.cleaned_data['slots_booked']
+        if not self.tour:
+            raise forms.ValidationError("Tour information is missing.")
+
+        available_slots = self.tour.max_group_size - self.tour.get_booked_slots()
+        if slots > available_slots:
+            raise forms.ValidationError(f"Only {available_slots} slots are available for this tour.")
+
+        return slots
+
+    def save(self, commit=True):
+        # Create booking instance
+        booking = super().save(commit=False)
+        booking.tour = self.tour
+        booking.user = self.user
+
+        if commit:
+            booking.save()
+        return booking
+
+class TourSearchForm(forms.Form):
+    query = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control py-3 rounded-3  w-75',
+            'placeholder': 'Search packages by destination,...'
+        })
+    )
