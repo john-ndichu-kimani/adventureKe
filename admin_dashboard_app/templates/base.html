@@ -54,9 +54,9 @@
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
-            <a href="{% url 'index' %}" class="logo">
-              <h1 class="navbar-brand text-center text-secondary">Tourify</h1>
-            </a>
+             <a class="navbar-brand text-white fw-bold" href="{% url 'index' %}">
+                <i class="fas fa-globe-europe me-2"></i>Tourify
+                   </a>
             <div class="nav-toggle">
               <button class="btn btn-toggle toggle-sidebar">
                 <i class="gg-menu-right"></i>
@@ -72,97 +72,63 @@
           <!-- End Logo Header -->
         </div>
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
-          <div class="sidebar-content">
-            <ul class="nav nav-secondary">
-              <li class="nav-item {% if request.resolver_match.url_name == 'admin-dashboard' %}active{% endif %}">
-                <a
-                  href="{% url 'admin-dashboard' %}"
-                  class="collapsed"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-home"></i>
-                  <p>Dashboard</p>
+                <div class="sidebar-content">
+                    <ul class="nav nav-secondary">
+                        <li class="nav-item active">
+                            <a href="{% url 'admin-dashboard' %}" class="collapsed" aria-expanded="false">
+                                <i class="fas fa-home"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'tours-manage' %}">
+                                <i class="fas fa-globe-europe"></i>
+                                <p>Tours</p>
+                            </a>
+                        </li>
 
-                </a>
+                         <li class="nav-item">
+                            <a href="{% url 'clients-manage' %}">
+                                <i class="fas fa-users"></i>
+                                <p>Clients</p>
+                            </a>
+                        </li>
 
-              </li>
-              <li class="nav-section">
-                <span class="sidebar-mini-icon">
-                  <i class="fa fa-ellipsis-h"></i>
-                </span>
+                        <li class="nav-item">
+                            <a href="{% url 'user-bookings' %}">
+                                <i class="fas fa-clipboard"></i>
+                                <p>Bookings</p>
+                            </a>
+                        </li>
 
-              </li>
-              <li class="nav-item {% if request.resolver_match.url_name == 'tours-manage' %}active{% endif %}">
-                <a href="{% url 'tours-manage' %}">
-                  <i class="fas fa-layer-group"></i>
-                  <p>Tours</p>
-                </a>
 
-              </li>
-              <li class="nav-item {% if request.resolver_match.url_name == 'guides-manage' %}active{% endif %}">
-                <a href="{% url 'guides-manage' %}">
-                  <i class="fas fa-th-list"></i>
-                  <p>Tour Guides</p>
+                        <li class="nav-item">
+                            <a href="{% url 'guides-manage' %}">
+                                <i class="fas fa-users"></i>
+                                <p>Tour Guides</p>
+                            </a>
+                        </li>
 
-                </a>
-
-              </li>
-
-              <li class="nav-item ">
-                <a href="#">
-                  <i class="fas fa-pen-square"></i>
-                  <p>Bookings</p>
-
-                </a>
-
-              </li>
-              <li class="nav-item {% if request.resolver_match.url_name == 'clients-manage' %}active{% endif %}">
-                <a href="{% url 'clients-manage' %}">
-                  <i class="fas fa-table"></i>
-                  <p>Clients</p>
-                </a>
-
-              </li>
-              <li class="nav-item {% if request.resolver_match.url_name == 'analytics' %}active{% endif %}">
-                <a href="{% url 'analytics' %}">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <p>Analytics</p>
-                </a>
-
-              </li>
-              <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#charts">
-                  <i class="far fa-chart-bar"></i>
-                  <p>Messages</p>
-                    <span class="badge badge-success">4</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{% url 'login' %}">
-                  <i class="fas fa-sign-out-alt"></i>
-                  <p>Logout</p>
-
-                </a>
-              </li>
-            </ul>
-          </div>
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <p>Logout</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- End Sidebar -->
+<!-- end of sidebar --->
 
       <div class="main-panel">
         <div class="main-header">
           <div class="main-header-logo">
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="dark">
-              <a href="{% url 'index' %}" class="logo">
-                <img
-                  src="{% static 'img/kaiadmin/logo_light.svg' %}"
-                  alt="navbar brand"
-                  class="navbar-brand"
-                  height="20"
-                />
-              </a>
+              <a class="navbar-brand text-white fw-bold" href="{% url 'index' %}">
+                <i class="fas fa-globe-europe me-2"></i>Tourify
+                   </a>
               <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
                   <i class="gg-menu-right"></i>
@@ -185,7 +151,7 @@
               <nav
                 class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
               >
-                  <h2 style="color: #7a16e4;">Welcome Tourify🌼, <span style="color: #424242">{{ user.fullname }}</span></h2>
+                  <h4 style="color: #7a16e4;">Welcome🌼, <span style="color: #424242">{{ user.email }}</span></h4>
               </nav>
 
               <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
@@ -228,7 +194,7 @@
                       </li>
                       <li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
+                        <a class="dropdown-item" href="{% url 'user_profile' %}">My Profile</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                       </li>
@@ -249,7 +215,7 @@
             <div class="page-category">
                 {% block body %}
 
-             {% endblock %}
+                 {% endblock %}
             </div>
 
 

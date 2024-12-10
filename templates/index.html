@@ -37,14 +37,11 @@
 
 <body>
 
-
-
     <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
+    <div class="container-fluid position-relative p-0" >
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-            <a href="" class="navbar-brand p-0">
-                <h1 class="text-success m-0 fw-bold">Touri<span class="text-warning">fy</span></h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
+            <a class="navbar-brand fw-bold" href="{% url 'index' %}">
+                <i class="fas fa-globe-europe me-2"></i>Tourify
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -69,7 +66,7 @@
                         <h1 class="display-3 text-white mb-3 animated slideInDown">Explore the World with Tourify</h1>
                         <p class="text-white mb-5 animated slideInDown" style="font-size: 18px">Discover unforgettable travel experiences with Tourify, your trusted tours and travel agency. From breathtaking safari adventures to serene beach getaways and cultural explorations, we bring your dream destinations to life. </p>
                         <div class="position-relative w-75 mx-auto animated slideInDown">
-                            <input class="form-control border-0  w-100 py-4 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
+                            <input class="form-control border-0  w-100 py-4 ps-4 pe-5" type="text" placeholder="Eg: Mombasa">
                             <button type="button" class="btn btn-success py-3 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
                         </div>
                     </div>
@@ -130,8 +127,8 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h1 class="mb-4">Welcome to <span class="text-success">Tourify</span></h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="mb-4">At Tourify, we are passionate about crafting unforgettable travel experiences that inspire and connect people. As a premier tours and travel agency, we specialize in offering customized itineraries, group adventures, and once-in-a-lifetime journeys to the most breathtaking destinations around the globe. Whether you’re seeking a serene escape, an adrenaline-pumping adventure, or a cultural immersion, Tourify is your trusted partner in bringing your travel dreams to life.</p>
+
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-warning me-2"></i>First Class Flights</p>
@@ -161,96 +158,101 @@
 
     <!-- Service Start -->
 
-        <div class="container py-5">
-            <div class="text-center"><h1>Services</h1></div>
-            <div class="row g-4 mt-5">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-danger mb-4"></i>
-                            <h5>WorldWide Tours</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-hotel text-success mb-4"></i>
-                            <h5>Hotel Reservation</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-user text-secondary mb-4"></i>
-                            <h5>Travel Guides</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-cog text-warning mb-4"></i>
-                            <h5>Event Management</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
+<div class="container py-5">
+    <div class="text-center"><h1>Services</h1></div>
+    <div class="row g-4 mt-5">
+        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-globe text-danger mb-4"></i>
+                    <h5>WorldWide Tours</h5>
+                    <p>Explore breathtaking destinations across the globe with our expertly curated travel packages.</p>
                 </div>
             </div>
         </div>
-
-    <!-- Service End -->
-
-     <!-- Process Start -->
-    <div class="container-xxl pb-5 " >
-        <div class="container">
-
-            <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="mb-5">3 Easy Steps</h1>
+        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-hotel text-success mb-4"></i>
+                    <h5>Hotel Reservation</h5>
+                    <p>Book comfortable and luxurious accommodations tailored to your travel plans and preferences.</p>
+                </div>
             </div>
-            <div class="row gy-5 gx-4 justify-content-center">
-                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp border-warning-subtle shadow-sm rounded-3" data-wow-delay="0.1s">
-                    <div class="pb-4 px-4">
-                        <div class="d-inline-flex align-items-center justify-content-center text-danger " style="width: 70px; height: 70px;">
-                            <i class="fa fa-globe fa-2x"></i>
-                        </div>
-                        <h5 class="mt-4">Choose A Destination</h5>
-                        <hr class="w-25 mx-auto bg-primary mb-1">
-                        <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit</p>
-                    </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-user text-secondary mb-4"></i>
+                    <h5>Travel Guides</h5>
+                    <p>Experience guided tours led by professional experts who bring destinations to life with their insights.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp shadow-sm rounded-3" data-wow-delay="0.3s">
-                    <div class="pb-4 px-4">
-                        <div class="d-inline-flex align-items-center justify-content-center text-warning" style="width: 70px; height: 70px;">
-                            <i class="fa fa-dollar-sign fa-2x"></i>
-                        </div>
-                        <h5 class="mt-4">Pay Online</h5>
-                        <hr class="w-25 mx-auto bg-primary mb-1">
-                        <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp rounded-3 shadow-sm" data-wow-delay="0.5s">
-                    <div class="pb-4 px-4">
-                        <div class="d-inline-flex align-items-center justify-content-center text-success  rounded-circle" style="width: 70px; height: 70px;">
-                            <i class="fa fa-plane fa-2x"></i>
-                        </div>
-                        <h5 class="mt-4">Fly Today</h5>
-                        <hr class="w-25 mx-auto bg-primary mb-1">
-                        <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit</p>
-                    </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-cog text-warning mb-4"></i>
+                    <h5>Event Management</h5>
+                    <p>Plan and execute memorable events, from corporate gatherings to personal celebrations, with ease.</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Process Start -->
+</div>
 
+<!-- Service End -->
+
+
+
+
+
+   <!-- Process Start -->
+<div class="container-xxl pb-5">
+    <div class="container">
+        <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-5">3 Easy Steps</h1>
+        </div>
+        <div class="row gy-5 gx-4 justify-content-center">
+            <!-- Step 1 -->
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp border-warning-subtle shadow-sm rounded-3" data-wow-delay="0.1s">
+                <div class="pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center text-danger" style="width: 70px; height: 70px;">
+                        <i class="fa fa-globe fa-2x"></i>
+                    </div>
+                    <h5 class="mt-4">Choose A Destination</h5>
+                    <hr class="w-25 mx-auto bg-primary mb-1">
+                    <hr class="w-50 mx-auto bg-primary mt-0">
+                    <p class="mb-0">Explore our wide range of destinations and pick the perfect one for your next adventure.</p>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp shadow-sm rounded-3" data-wow-delay="0.3s">
+                <div class="pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center text-warning" style="width: 70px; height: 70px;">
+                        <i class="fa fa-dollar-sign fa-2x"></i>
+                    </div>
+                    <h5 class="mt-4">Pay Online</h5>
+                    <hr class="w-25 mx-auto bg-primary mb-1">
+                    <hr class="w-50 mx-auto bg-primary mt-0">
+                    <p class="mb-0">Secure and hassle-free online payment options to make your booking quick and easy.</p>
+                </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp rounded-3 shadow-sm" data-wow-delay="0.5s">
+                <div class="pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center text-success rounded-circle" style="width: 70px; height: 70px;">
+                        <i class="fa fa-plane fa-2x"></i>
+                    </div>
+                    <h5 class="mt-4">Fly Today</h5>
+                    <hr class="w-25 mx-auto bg-primary mb-1">
+                    <hr class="w-50 mx-auto bg-primary mt-0">
+                    <p class="mb-0">Pack your bags and get ready to embark on your journey. Your adventure begins now!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Process End -->
 
 
 <!-- Package Start -->
@@ -319,78 +321,52 @@
 <!-- Package End -->
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="mb-5">Our Clients Say!!!</h1>
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="mb-5">What Our Clients Say!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            <div class="testimonial-item bg-white text-center border p-4">
+{#                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-1.jpg' %}" style="width: 80px; height: 80px;">#}
+                <h5 class="mb-0">Sarah Williams</h5>
+                <p>Los Angeles, USA</p>
+                <p class="mb-0">"Our trip was perfectly organized, and the service exceeded our expectations. I can't wait to book my next adventure!"</p>
             </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-1.jpg' %}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>New York, USA</p>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-2.jpg' %}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>New York, USA</p>
-                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-3.jpg' %}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>New York, USA</p>
-                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-4.jpg' %}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>New York, USA</p>
-                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                </div>
+            <div class="testimonial-item bg-white text-center border p-4">
+{#                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-2.jpg' %}" style="width: 80px; height: 80px;">#}
+                <h5 class="mb-0">James Anderson</h5>
+                <p>London, UK</p>
+                <p class="mt-2 mb-0">"Everything from the booking process to the actual tour was seamless. The team made sure every detail was covered."</p>
+            </div>
+            <div class="testimonial-item bg-white text-center border p-4">
+{#                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-3.jpg' %}" style="width: 80px; height: 80px;">#}
+                <h5 class="mb-0">Emily Johnson</h5>
+                <p>Sydney, Australia</p>
+                <p class="mt-2 mb-0">"The tour guides were so knowledgeable and friendly. This was truly a once-in-a-lifetime experience for me!"</p>
+            </div>
+            <div class="testimonial-item bg-white text-center border p-4">
+{#                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-4.jpg' %}" style="width: 80px; height: 80px;">#}
+                <h5 class="mb-0">David Miller</h5>
+                <p>Toronto, Canada</p>
+                <p class="mt-2 mb-0">"I appreciate the attention to detail and excellent communication throughout the entire process. Highly recommended!"</p>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
-
+</div>
+<!-- Testimonial End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Company</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-success w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-success py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="{% url 'index' %}">Tourify</a>, All Right Reserved.
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     <!-- Footer End -->
 

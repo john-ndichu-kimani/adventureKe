@@ -1,5 +1,41 @@
 {% extends 'user_base.html' %}
 {% load static %}
 {% block body %}
-<h1>Payments History from here</h1>
+<div class="container card mt-5">
+<table class="table table-responsive table-striped">
+    <thead class="table-dark">
+    <tr>
+        <th>Code</th>
+        <th>Method</th>
+        <th>Amount</th>
+        <th>ReceiptNo</th>
+        <th>Time</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for payment in payments %}
+    <tr>
+    <td>{{ payment.transaction_code }}</td>
+    <td>{{ payment.method }}</td>
+    <td>{{ payment.amount }}</td>
+    <td>{{ payment.receipt_number }}</td>
+    <td>{{ payment.created_at | time}}</td>
+    <td>
+            {% if payment.status == 'PENDING' %}
+                <button class="badge bg-warning" style="border: none;border-radius: 2px">
+                <small>pending</small>
+                </button>
+                {% elif payment.status == 'PAID' %}
+                <button class="badge bg-success" style="border: none;border-radius: 2px">
+                <small>paid</small>
+                </button>
+            {% endif %}
+            </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+</div>
 {% endblock %}

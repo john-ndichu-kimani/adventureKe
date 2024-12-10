@@ -1,0 +1,41 @@
+{% extends 'user_base.html' %}
+
+{% block title %}Payment Processing{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h2 class="text-center">Payment Processing</h2>
+
+    <!-- Display process payment info message if available -->
+   {% for message in messages %}
+    {% if 'payment' in message.tags %}
+        <div class="alert alert-info">
+            {{ message }}
+        </div>
+    {% endif %}
+{% endfor %}
+
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                    <p class="text-info">{{ payment_response.status|capfirst }}</p>
+                    {% if payment.status == 'pending' %}
+                        <div class="alert alert-warning" role="alert">
+                            Your payment is still pending. Please wait for confirmation.
+                        </div>
+                    {% elif payment_response.status == 'success' %}
+                        <div class="alert alert-success" role="alert">
+                            Your payment has been successfully completed.
+                        </div>
+                    {% elif payment_response == 'failed' %}
+                        <div class="alert alert-danger" role="alert">
+                            Payment failed. Please try again.
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

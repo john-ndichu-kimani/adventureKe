@@ -1,198 +1,29 @@
 {% extends 'base.html' %}
-<h4 class="page-title">{% block page-title %}Tour Packages{% endblock %}</h4>
+{% block page-title %}Tour Packages{% endblock %}
 {% block body %}
 <div class="col-md-12">
   <div class="card">
     <div class="card-header">
       <div class="d-flex align-items-start">
-        <button
+
+         <a href="{% url 'create_tour' %}"
           class="btn btn-secondary ms-auto"
-          href="{% url 'create' %}"
-{#          data-bs-toggle="modal"#}
-{#          data-bs-target="#addRowModal"#}
         >
-          <i class="fa fa-plus"></i>
-          Add Tour
-        </button>
+          New Tour
+        </a>
       </div>
     </div>
     <div class="card-body">
-      <h1>hello</h1>
-{#      <!-- Modal -->#}
-{#      <div#}
-{#        class="modal fade"#}
-{#        id="addRowModal"#}
-{#        tabindex="-1"#}
-{#        role="dialog"#}
-{#        aria-hidden="true"#}
-{#      >#}
-{#        <div class="modal-dialog" role="document">#}
-{#          <div class="modal-content">#}
-{#            <div class="modal-header border-0 d-flex align-items-end">#}
-{#              <h3>New Package</h3>#}
-{##}
-{#            </div>#}
-{#            <div class="modal-body">#}
-{#              <!-- Suggested Modifications -->#}
-{#              <form method="POST" enctype="multipart/form-data">#}
-{#                {% csrf_token %}#}
-{#                <div class="row">#}
-{#                  <div class="col-sm-12">#}
-{#                    <label for="title">Title</label>#}
-{#                    <input#}
-{#                      id="title"#}
-{#                      type="text"#}
-{#                      name="title"#}
-{#                      class="form-control"#}
-{#                      placeholder="Enter tour title"#}
-{#                      required="required"#}
-{#                    />#}
-{#                  </div>#}
-{#                  <div class="col-sm-12">#}
-{#                    <label for="description">Description</label>#}
-{#                    <textarea#}
-{#                      id="description"#}
-{#                      name="description"#}
-{#                      class="form-control"#}
-{#                      placeholder="Provide tour description"#}
-{#                      required="required"#}
-{#                    ></textarea>#}
-{#                  </div>#}
-{##}
-{#                  <div class="col-sm-12">#}
-{#                    <label for="price">Price (KES)</label>#}
-{#                    <input#}
-{#                      id="price"#}
-{#                      name="price"#}
-{#                      type="number"#}
-{#                      step="0.01"#}
-{#                      min="0"#}
-{#                      class="form-control"#}
-{#                      required="required"#}
-{#                    />#}
-{#                  </div>#}
-{##}
-{#                  <div class="col-sm-12">#}
-{#                    <label for="destination">Destination</label>#}
-{#                    <select#}
-{#                      class="form-control"#}
-{#                      name="destinations"#}
-{#                      id="destination"#}
-{#                      required#}
-{#                    >#}
-{#                      <option value="" disabled selected>#}
-{#                        Choose destination...#}
-{#                      </option>#}
-{#                      {% for location in destinations %}#}
-{#                      <option value="{{ location.id }}">#}
-{#                        {{ location.name }}#}
-{#                      </option>#}
-{#                      {% endfor %}#}
-{#                    </select>#}
-{#                  </div>#}
-{##}
-{#                  <div class="col-sm-12">#}
-{#                    <label for="start_date">Start Date</label>#}
-{#                    <input#}
-{#                      id="start_date"#}
-{#                      name="start_date"#}
-{#                      type="date"#}
-{#                      class="form-control"#}
-{#                      required="required"#}
-{#                    />#}
-{#                  </div>#}
-{##}
-{#                  <div class="col-sm-12">#}
-{#                    <label for="end_date">End Date</label>#}
-{#                    <input#}
-{#                      id="end_date"#}
-{#                      name="end_date"#}
-{#                      type="date"#}
-{#                      class="form-control"#}
-{#                      required="required"#}
-{#                    />#}
-{#                  </div>#}
-{##}
-{#                  <div class="col-md-6">#}
-{#                    <label for="max_group_size">Max Group Size</label>#}
-{#                    <input#}
-{#                      id="max_group_size"#}
-{#                      name="max_group_size"#}
-{#                      type="number"#}
-{#                      min="1"#}
-{#                      class="form-control"#}
-{#                      required="required"#}
-{#                    />#}
-{#                  </div>#}
-{##}
-{#                  <div class="col-md-6">#}
-{#                    <label for="min_group_size">Min Group Size</label>#}
-{#                    <input#}
-{#                      id="min_group_size"#}
-{#                      name="min_group_size"#}
-{#                      type="number"#}
-{#                      min="1"#}
-{#                      class="form-control"#}
-{#                      required="required"#}
-{#                    />#}
-{#                  </div>#}
-{##}
-{#                  <div class="col-md-6">#}
-{#                    <label for="slots">Available Slots</label>#}
-{#                    <input#}
-{#                      id="slots"#}
-{#                      name="slots"#}
-{#                      type="number"#}
-{#                      min="0"#}
-{#                      class="form-control"#}
-{#                      required="required"#}
-{#                    />#}
-{#                  </div>#}
-{##}
-{#                  <div class="col-md-6">#}
-{#                    <label for="image">Featured Image</label>#}
-{#                    <input#}
-{#                      id="image"#}
-{#                      type="file"#}
-{#                      name="featured_image"#}
-{#                      class="form-control"#}
-{#                      accept="image/*"#}
-{#                    />#}
-{#                  </div>#}
-{#                </div>#}
-{##}
-{#                <div class="modal-footer border-0">#}
-{#                  <button#}
-{#                    type="submit"#}
-{#                    id="addRowButton"#}
-{#                    class="btn btn-secondary"#}
-{#                  >#}
-{#                    Add Tour#}
-{#                  </button>#}
-{#                  <button#}
-{#                    type="button"#}
-{#                    class="btn btn-danger"#}
-{#                    data-dismiss="modal"#}
-{#                  >#}
-{#                    Close#}
-{#                  </button>#}
-{#                </div>#}
-{#              </form>#}
-{#            </div>#}
-{#          </div>#}
-{#        </div>#}
-{#      </div>#}
-
       <div class="table-responsive">
         <table id="add-row" class="display table">
-          <thead>
+          <thead class="table table-dark">
             <tr>
               <th>Title</th>
               <th>Destination</th>
-              <th>Duration</th>
+              <th>Days</th>
               <th>Slots</th>
               <th>Price</th>
-              <th style="width: 10%">Action</th>
+              <th style="width: 15%">Action</th>
             </tr>
           </thead>
 
@@ -201,9 +32,27 @@
             <tr>
               <td>{{ package.title }}</td>
               <td>{{ package.destination }}</td>
-              <td>{{ package.duration }}</td>
+              <td>{{ package.duration_days }}</td>
               <td>{{ package.available_slots }}</td>
               <td>{{ package.price }}</td>
+              <td>
+                <div class="form-button-action">
+                  <a
+                    href="{% url 'update_tour' package.id %}"
+                    class="btn btn-link btn-primary btn-sm"
+                    data-original-title="Edit Tour"
+                  >
+                    <i class="fa fa-edit"></i>
+                  </a>
+                  <a
+                    href="{% url 'delete_tour' package.id %}"
+                    class="btn btn-link btn-danger btn-sm"
+                    data-original-title="Delete Tour"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </div>
+              </td>
             </tr>
             {% endfor %}
           </tbody>
@@ -212,5 +61,4 @@
     </div>
   </div>
 </div>
-
 {% endblock %}

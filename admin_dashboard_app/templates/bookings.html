@@ -1,157 +1,15 @@
 {% extends 'base.html' %}
-<h4 class="page-title">{% block page-title %}Analytics{% endblock %}</h4>
+<h4 class="page-title">{% block page-title %}User Bookings{% endblock %}</h4>
 {% block body %}
 <div class="col-md-12">
                 <div class="card">
-                  <div class="card-header">
-                    <div class="d-flex align-items-start">
-                      <button
-                        class="btn btn-secondary ms-auto"
-                        data-bs-toggle="modal"
-                        data-bs-target="#addRowModal"
-                      >
-                        <i class="fa fa-plus"></i>
-                        Add Tour
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <!-- Modal -->
-                    <div
-                      class="modal fade"
-                      id="addRowModal"
-                      tabindex="-1"
-                      role="dialog"
-                      aria-hidden="true"
-                    >
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header border-0">
-                            <h5 class="modal-title">
-                              <span class="fw-mediumbold"> New</span>
-                              <span class="fw-light"> Tour Package </span>
-                            </h5>
-                            <button
-                              type="button"
-                              class="close"
-                              data-dismiss="modal"
-                              aria-label="Close"
-                            >
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-
-                            <form>
-                              <div class="row">
-                                <div class="col-sm-12">
-
-                                    <label for="title">Title</label>
-                                    <input
-                                      id="title"
-                                      type="text"
-                                      name="title"
-                                      class="form-control"
-                                      placeholder="fill title"
-                                    />
-                                </div>
-                                <div class="col-md-6">
-
-                                    <label for="destination">Destination</label>
-                                    <input
-                                      id="destination"
-                                      name="destination"
-                                      type="text"
-                                      class="form-control"
-                                      placeholder="fill destination"
-                                    />
-                                  </div>
-
-                                  <div class="d-flex gap-2">
-                                  <div class="col-md-6">
-
-                                    <label for="start_date">Start Date</label>
-                                    <input
-                                      id="start_date"
-                                      name="start_date"
-                                      type="datetime-local"
-                                      class="form-control"
-                                    />
-                                  </div>
-                                  <div class="col-md-6">
-
-                                    <label for="end_date">End Date</label>
-                                    <input
-                                      id="end_date"
-                                      name="end_date"
-                                      type="datetime-local"
-                                      class="form-control"
-                                    />
-                                  </div>
-                                </div>
-                                  <div class="col-md-6">
-
-                                    <label for="duration">Duration</label>
-                                    <input
-                                      id="duration"
-                                      name="duration"
-                                      type="number"
-                                      class="form-control"
-                                      readonly
-                                    />
-                                  </div>
-                                <div class="col-md-6">
-
-                                    <label for="description">Description</label>
-                                    <textarea
-                                      id="description"
-                                      type="text"
-                                      class="form-control"
-                                      placeholder="fill Description"
-                                    ></textarea>
-
-                                </div>
-
-                                  <div class="col-md-6">
-
-                                    <label for="image">Image</label>
-                                    <input
-                                      id="image"
-                                      type="file"
-                                      class="form-control"
-                                    />
-
-                                </div>
-                                </div>
-                            </form>
-
-                          </div>
-                          <div class="modal-footer border-0">
-                            <button
-                              type="button"
-                              id="addRowButton"
-                              class="btn btn-secondary"
-                            >
-                              Add
-                            </button>
-                            <button
-                              type="submit"
-                              class="btn btn-danger"
-                              data-dismiss="modal"
-                            >
-                              Close
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
 
                     <div class="table-responsive">
                       <table
                         id="add-row"
                         class="display table "
                       >
-                        <thead>
+                        <thead class="table table-dark">
                           <tr>
                             <th>Client</th>
                             <th>Package</th>
@@ -159,7 +17,7 @@
                             <th>Status</th>
                             <th>Slots</th>
                             <th>Price</th>
-                            <th style="width: 10%">Action</th>
+
                           </tr>
                         </thead>
 
@@ -170,12 +28,18 @@
                                   <td>{{ bk.user.email }}</td>
                                   <td>{{ bk.tour.title }}</td>
                                   <td>{{ bk.booking_date }}</td>
-                                  <td>{{ bk.status }}</td>
+                                  <td>
+                                      {% if bk.status == 'PENDING' %}
+                                      <span class="badge bg-warning">pending</span>
+                                          {% elif bk.status == 'CANCELLED' %}
+                                          <span class="badge bg-warning">pending</span>
+                                          {% elif bk.status == 'CONFIRMED' %}
+                                          <span class="badge bg-warning">confirmed</span>
+                                      {% endif %}
+                                  </td>
                                   <td>{{ bk.slots_booked }}</td>
                                   <td>{{ bk.total_price }}</td>
-                                  <td>
-                                      <a href="#" class="btn btn-secondary">View</a>
-                                  </td>
+
                           </tr>
                          {% endfor %}
                         </tbody>
@@ -183,5 +47,5 @@
                     </div>
                   </div>
                 </div>
-              </div>
+
 {% endblock %}

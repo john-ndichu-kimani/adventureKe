@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #16e495;
+    --primary: #313131;
     --secondary: #FE8800;
     --light: #F5F5F5;
     --dark: #14141F;
@@ -158,7 +158,7 @@
 
 /*** Hero Header ***/
 .hero-header {
-   background:linear-gradient(45deg,#c05eaa,#67d1bc);
+   background:linear-gradient(45deg, #ab5396, #4a9b8c);
     /*background: linear-gradient(rgba(16, 24, 26, 0.32), rgba(10, 51, 23, 0.97)), url(../img/hero_bg_img.jpg);*/
     /*background-position: center center;*/
     /*background-repeat: no-repeat;*/

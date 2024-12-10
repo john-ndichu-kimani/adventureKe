@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,21 @@ SECRET_KEY = 'django-insecure-pk^o2k0gbv$1yv_i5f!!)5v7zv%*49m1j((%hdnmbvqsaqn&@)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# MPesa Configuration
+MPESA_ENVIRONMENT = os.getenv('MPESA_ENVIRONMENT')
+MPESA_CONSUMER_KEY = os.getenv('MPESA_CONSUMER_KEY')
+MPESA_CONSUMER_SECRET = os.getenv('MPESA_CONSUMER_SECRET')
+MPESA_BUSINESS_SHORTCODE = os.getenv('MPESA_BUSINESS_SHORTCODE')
+MPESA_PASSKEY = os.getenv('MPESA_PASSKEY')
+MPESA_CALLBACK_BASE_URL = os.getenv('MPESA_CALLBACK_BASE_URL')
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '750f-2c0f-2d80-200-6100-8429-fd8-ea32-5bad.ngrok-free.app',
+]
+CSRF_TRUSTED_ORIGINS = ['https://750f-2c0f-2d80-200-6100-8429-fd8-ea32-5bad.ngrok-free.app']
+
 
 AUTH_USER_MODEL = 'adventureApp.User'
 
@@ -34,6 +49,38 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+
+# Logging Configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'mpesa_debug.log',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'mpesa': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 # Application definition
 
 INSTALLED_APPS = [

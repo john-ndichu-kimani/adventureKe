@@ -1,379 +1,320 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tourify Admin Dashboard</title>
-    <meta
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-      name="viewport"
-    />
-      {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <link
-      rel="icon"
-      href="{% static 'img/kaiadmin/favicon.ico' %}"
-      type="image/x-icon"
-    />
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/kaiadmin/favicon.ico' %}" type="image/x-icon">
 
-    <!-- Fonts and icons -->
+    <!-- Fonts and Icons -->
     <script src="{% static 'js/plugin/webfont/webfont.min.js' %}"></script>
     <script>
-      WebFont.load({
-        google: { families: ["Public Sans:300,400,500,600,700"] },
-        custom: {
-          families: [
-            "Font Awesome 5 Solid",
-            "Font Awesome 5 Regular",
-            "Font Awesome 5 Brands",
-            "simple-line-icons",
-          ],
-          urls: ["assets/css/fonts.min.css"],
-        },
-        active: function () {
-          sessionStorage.fonts = true;
-        },
-      });
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons"
+                ],
+                urls: ["{% static 'css/fonts.min.css' %}"]
+            },
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
     </script>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/plugins.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/kaiadmin.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/kaiadmin.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
 
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="{% static 'css/demo.css' %}" />
-
-      <!--online fontawesome CDN link for icons-->
- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  </head>
-  <body>
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
     <div class="wrapper">
-      <!-- Sidebar -->
-      <div class="sidebar" data-background-color="dark">
-        <div class="sidebar-logo">
-          <!-- Logo Header -->
-          <div class="logo-header" data-background-color="dark">
-            <a href="{% url 'index' %}" class="logo">
-              <h1 class="navbar-brand text-center text-secondary">Tourify</h1>
-            </a>
-            <div class="nav-toggle">
-              <button class="btn btn-toggle toggle-sidebar">
-                <i class="gg-menu-right"></i>
-              </button>
-              <button class="btn btn-toggle sidenav-toggler">
-                <i class="gg-menu-left"></i>
-              </button>
-            </div>
-            <button class="topbar-toggler more">
-              <i class="gg-more-vertical-alt"></i>
-            </button>
-          </div>
-          <!-- End Logo Header -->
-        </div>
-        <div class="sidebar-wrapper scrollbar scrollbar-inner">
-          <div class="sidebar-content">
-            <ul class="nav nav-secondary">
-              <li class="nav-item active">
-                <a
-                  data-bs-toggle="collapse"
-                  href="{% url 'admin-dashboard' %}"
-                  class="collapsed"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-home"></i>
-                  <p>Dashboard</p>
+        <!-- Sidebar -->
+        <div class="sidebar" data-background-color="dark">
+            <div class="sidebar-logo">
+                <div class="logo-header" data-background-color="dark">
 
-                </a>
 
-              </li>
-              <li class="nav-section">
-                <span class="sidebar-mini-icon">
-                  <i class="fa fa-ellipsis-h"></i>
-                </span>
+                     <a class="navbar-brand text-white fw-bold" href="{% url 'index' %}">
+                <i class="fas fa-globe-europe me-2"></i>Tourify
+                   </a>
 
-              </li>
-              <li class="nav-item">
-                <a href="{% url 'tours-manage' %}">
-                  <i class="fas fa-layer-group"></i>
-                  <p>Tours</p>
-                </a>
-
-              </li>
-              <li class="nav-item">
-                <a href="{% url 'guides-manage' %}">
-                  <i class="fas fa-th-list"></i>
-                  <p>Tour Guides</p>
-
-                </a>
-
-              </li>
-              <li class="nav-item">
-                <a href="#">
-                  <i class="fas fa-pen-square"></i>
-                  <p>Bookings</p>
-
-                </a>
-
-              </li>
-              <li class="nav-item">
-                <a href="{% url 'clients-manage' %}">
-                  <i class="fas fa-table"></i>
-                  <p>Clients</p>
-                </a>
-
-              </li>
-              <li class="nav-item">
-                <a href="{% url 'analytics' %}">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <p>Analytics</p>
-                </a>
-
-              </li>
-              <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#charts">
-                  <i class="far fa-chart-bar"></i>
-                  <p>Messages</p>
-                     <span class="badge badge-success">4</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{% url 'login' %}">
-                  <i class="fas fa-sign-out-alt"></i>
-                  <p>Logout</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- End Sidebar -->
-
-      <div class="main-panel">
-        <div class="main-header">
-          <div class="main-header-logo">
-            <!-- Logo Header -->
-            <div class="logo-header" data-background-color="dark">
-              <a href="{% url 'index' %}" class="logo">
-                <img
-                  src="{% static 'img/kaiadmin/logo_light.svg' %}"
-                  alt="navbar brand"
-                  class="navbar-brand"
-                  height="20"
-                />
-              </a>
-              <div class="nav-toggle">
-                <button class="btn btn-toggle toggle-sidebar">
-                  <i class="gg-menu-right"></i>
-                </button>
-                <button class="btn btn-toggle sidenav-toggler">
-                  <i class="gg-menu-left"></i>
-                </button>
-              </div>
-              <button class="topbar-toggler more">
-                <i class="gg-more-vertical-alt"></i>
-              </button>
-            </div>
-            <!-- End Logo Header -->
-          </div>
-          <!-- Navbar Header -->
-          <nav
-            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
-          >
-            <div class="container-fluid">
-              <nav
-                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
-              >
-                  <h2 style="color: #7a16e4;">Welcome Tourify🌼, <span style="color: #424242">{{ user.fullname }}</span></h2>
-              </nav>
-
-              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
-
-                <li class="nav-item topbar-user dropdown hidden-caret">
-                  <a
-                    class="dropdown-toggle profile-pic"
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    aria-expanded="false"
-                  >
-                    <div class="avatar-sm">
-                      <img
-                        src="{{ user.profile_picture }}"
-                        alt="..."
-                        class="avatar-img rounded-circle"
-                      />
+                    <div class="nav-toggle">
+                        <button class="btn btn-toggle toggle-sidebar">
+                            <i class="gg-menu-right"></i>
+                        </button>
+                        <button class="btn btn-toggle sidenav-toggler">
+                            <i class="gg-menu-left"></i>
+                        </button>
                     </div>
-                    <span class="profile-username">
-                      <span class="op-7">Hi,</span>
-                      <span class="fw-bold">{{ user.fullname }}</span>
-                    </span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-user animated fadeIn">
-                    <div class="dropdown-user-scroll scrollbar-outer">
-                      <li>
-                        <div class="user-box">
-                          <div class="avatar-lg">
-                            <img
-                              src="{{ user.profile_picture }}"
-                              alt="image profile"
-                              class="avatar-img rounded"
-                            />
-                          </div>
-                          <div class="u-text">
-                            <h4>{{ user.fullname }}</h4>
-                            <p class="text-muted">{{ user.email }}</p>
-                            <a
-                              href="{% url 'profile'%}"
-                              class="btn btn-xs btn-secondary btn-sm"
-                              >View Profile</a
-                            >
-                          </div>
+                    <button class="topbar-toggler more">
+                        <i class="gg-more-vertical-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="sidebar-wrapper scrollbar scrollbar-inner">
+                <div class="sidebar-content">
+                    <ul class="nav nav-secondary">
+                        <li class="nav-item active">
+                            <a href="{% url 'admin-dashboard' %}" class="collapsed" aria-expanded="false">
+                                <i class="fas fa-home"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'tours-manage' %}">
+                                <i class="fas fa-globe-europe"></i>
+                                <p>Tours</p>
+                            </a>
+                        </li>
+
+                         <li class="nav-item">
+                            <a href="{% url 'clients-manage' %}">
+                                <i class="fas fa-users"></i>
+                                <p>Clients</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'user-bookings' %}">
+                                <i class="fas fa-clipboard"></i>
+                                <p>Bookings</p>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="{% url 'guides-manage' %}">
+                                <i class="fas fa-users"></i>
+                                <p>Tour Guides</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <p>Logout</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <div class="main-header">
+                <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+                            <h4 style="color: #7a16e4;">Welcome🌼, <span style="color: #424242">{{ user.email }}</span></h4>
+                        </nav>
+
+                        <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                            <li class="nav-item topbar-user dropdown hidden-caret">
+                                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                                    <div class="avatar-sm">
+                                        <img src="{{ user.profile_picture }}" alt="Profile" class="avatar-img rounded-circle">
+                                    </div>
+                                    <span class="profile-username">
+                                        <span class="op-7">Hi,</span>
+                                        <span class="fw-bold">{{ user.fullname }}</span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                    <div class="dropdown-user-scroll scrollbar-outer">
+                                        <li>
+                                            <div class="user-box">
+                                                <div class="avatar-lg">
+                                                    <img src="{{ user.profile_picture }}" alt="Profile" class="avatar-img rounded">
+                                                </div>
+                                                <div class="u-text">
+                                                    <h4>{{ user.fullname }}</h4>
+                                                    <p class="text-muted">{{ user.email }}</p>
+                                                    <a href="{% url 'user_profile' %}" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="{% url 'user_profile' %}">My Profile</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="container">
+                <div class="page-inner">
+                    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+                        <div>
+                            <h3 class="fw-bold mb-3">Dashboard</h3>
+                            <h6 class="op-7 mb-2">Tourify Admin Dashboard</h6>
                         </div>
-                      </li>
-                      <li>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                      </li>
                     </div>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <!-- End Navbar -->
-        </div>
 
-         <div class="container">
-  <div class="page-inner">
-    <div
-      class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
-    >
-      <div>
-        <h3 class="fw-bold mb-3">Dashboard</h3>
-        <h6 class="op-7 mb-2">Tourify Admin Dashboard</h6>
-      </div>
+                    <!-- Dashboard Statistics Cards -->
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card card-stats card-round">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-icon">
+                                            <div class="icon-big text-center ">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col col-stats ms-3 ms-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">Tours</p>
+                                                <h4 id="total-tours" class="card-title">{{ tours_count }}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card card-stats card-round">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-icon">
+                                            <div class="icon-big text-center">
+                                                <i class="fas fa-user-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col col-stats ms-3 ms-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">Tour Guides</p>
+                                                <h4 id="total-guides" class="card-title">{{ guides_count }}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card card-stats card-round">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-icon">
+                                            <div class="icon-big text-center">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col col-stats ms-3 ms-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">Customers</p>
+                                                <h4 id="total-customers" class="card-title">{{ users_count }}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card card-stats card-round">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-icon">
+                                            <div class="icon-big text-center ">
+                                                <i class="far fa-clipboard"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col col-stats ms-3 ms-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">Bookings</p>
+                                                <h4 id="total-bookings" class="card-title">{{ bookings_count }}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-md-3">
-        <div class="card card-stats card-round">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-icon">
-                <div
-                  class="icon-big text-center icon-primary bubble-shadow-small"
-                >
-                  <i class="fas fa-users"></i>
+                    <!-- Charts Row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Monthly Revenues</div>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="revenueChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col col-stats ms-3 ms-sm-0">
-                <div class="numbers">
-                  <p class="card-category">Tours</p>
-                  <h4 class="card-title">1,294</h4>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card card-stats card-round">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-icon">
-                <div
-                  class="icon-big text-center icon-info bubble-shadow-small"
-                >
-                  <i class="fas fa-user-check"></i>
-                </div>
-              </div>
-              <div class="col col-stats ms-3 ms-sm-0">
-                <div class="numbers">
-                  <p class="card-category">Tour Guides</p>
-                  <h4 class="card-title">1303</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card card-stats card-round">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-icon">
-                <div
-                  class="icon-big text-center icon-success bubble-shadow-small"
-                >
-                  <i class="fas fa-luggage-cart"></i>
-                </div>
-              </div>
-              <div class="col col-stats ms-3 ms-sm-0">
-                <div class="numbers">
-                  <p class="card-category">Customers</p>
-                  <h4 class="card-title">$ 1,345</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card card-stats card-round">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-icon">
-                <div
-                  class="icon-big text-center icon-secondary bubble-shadow-small"
-                >
-                  <i class="far fa-check-circle"></i>
-                </div>
-              </div>
-              <div class="col col-stats ms-3 ms-sm-0">
-                <div class="numbers">
-                  <p class="card-category">Bookings</p>
-                  <h4 class="card-title">576</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
-      </div>
-    </div>
-    <!--   Core JS Files   -->
+    <!-- Core JS Files -->
     <script src="{% static 'js/core/jquery-3.7.1.min.js' %}"></script>
     <script src="{% static 'js/core/popper.min.js' %}"></script>
     <script src="{% static 'js/core/bootstrap.min.js' %}"></script>
 
-    <!-- jQuery Scrollbar -->
+    <!-- Dashboard Charts Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Revenue Line Chart
+            const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+            new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Monthly Revenue ($)',
+                        data: [45000, 52000, 60000, 55000, 70000, 65000],
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Revenue ($)'
+                            }
+                        }
+                    }
+                }
+            });
+
+
+            // Update dashboard statistics (simulated data)
+            document.getElementById('total-tours').textContent = '1,294';
+            document.getElementById('total-guides').textContent = '1,303';
+            document.getElementById('total-customers').textContent = '2,854';
+            document.getElementById('total-bookings').textContent = '576';
+        });
+    </script>
+
+    <!-- Additional JS Plugins -->
     <script src="{% static 'js/plugin/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
-
-    <!-- Chart JS -->
-    <script src="{% static 'js/plugin/chart.js/chart.min.js' %}"></script>
-
-    <!-- jQuery Sparkline -->
     <script src="{% static 'js/plugin/jquery.sparkline/jquery.sparkline.min.js' %}"></script>
-
-    <!-- Chart Circle -->
-    <script src="{% static 'js/plugin/chart-circle/circles.min.js' %}"></script>
-
-    <!-- Datatables -->
-    <script src="assets/{% static 'js/plugin/datatables/datatables.min.js' %}"></script>
-
-    <!-- Bootstrap Notify -->
-    <script src="{% static 'js/plugin/bootstrap-notify/bootstrap-notify.min.js' %}"></script>
-
-
-    <!-- Sweet Alert -->
-    <script src="{% static 'js/plugin/sweetalert/sweetalert.min.js' %}"></script>
-
-    <!-- Kaiadmin JS -->
-    <script src="{% static 'js/kaiadmin.min.js' %}"></script>
-      </div>
-    </div>
-  </body>
-</html>

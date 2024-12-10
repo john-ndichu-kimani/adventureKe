@@ -162,6 +162,7 @@ class Booking(models.Model):
         ('PENDING', 'Pending'),
         ('CONFIRMED', 'Confirmed'),
         ('CANCELLED', 'Cancelled'),
+        ('PAID','Paid')
     ]
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="bookings")
@@ -177,14 +178,73 @@ class Booking(models.Model):
         verbose_name = "Booking"
         verbose_name_plural = "Bookings"
 
+        unique_together = ('user','tour')
+
     def __str__(self):
-        return f"Booking by {self.user.get_full_name() or self.user.username} for {self.tour.title}"
+        return f"Booking by {self.user.get_full_name() or self.user.email} for {self.tour.title}"
 
     def save(self, *args, **kwargs):
         """Calculate the total price based on the slots booked."""
         self.total_price = self.slots_booked * self.tour.price
         super().save(*args, **kwargs)
 
+
+class Payment(models.Model):
+    PAYMENT_STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('success', 'Success'),
+        ('failed', 'Failed')
+    ]
+
+    PAYMENT_METHOD_CHOICES = [
+        ('mpesa', 'M-Pesa'),
+        ('credit_card', 'Credit Card'),
+        ('paypal', 'PayPal')
+    ]
+
+    booking = models.OneToOneField(
+        Booking,
+        on_delete=models.CASCADE,
+        related_name='payment'
+    )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='payments'
+    )
+    amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2
+    )
+    transaction_code = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    mpesa_receipt_number = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    status = models.CharField(
+        max_length=20,
+        choices=PAYMENT_STATUS_CHOICES,
+        default='pending'
+    )
+    payment_method = models.CharField(
+        max_length=20,
+        choices=PAYMENT_METHOD_CHOICES,
+        default='mpesa'
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Payment for {self.booking} - {self.status}"
+
+    class Meta:
+        verbose_name_plural = "Payments"
+        ordering = ['-created_at']
 
 
 class Review(models.Model):

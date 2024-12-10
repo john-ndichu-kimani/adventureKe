@@ -1,0 +1,280 @@
+INFO 2024-12-08 16:53:17,618 mpesa_utils 3648 26276 Attempting to retrieve MPesa access token (Attempt 1)
+DEBUG 2024-12-08 16:53:18,418 mpesa_utils 3648 26276 Token Request Status: 400
+DEBUG 2024-12-08 16:53:18,419 mpesa_utils 3648 26276 Token Response: 
+WARNING 2024-12-08 16:53:18,420 mpesa_utils 3648 26276 Access token retrieval failed: 400 Client Error: Bad Request for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+INFO 2024-12-08 16:53:18,421 mpesa_utils 3648 26276 Retrying in 1 seconds...
+INFO 2024-12-08 16:53:19,423 mpesa_utils 3648 26276 Attempting to retrieve MPesa access token (Attempt 2)
+DEBUG 2024-12-08 16:53:20,683 mpesa_utils 3648 26276 Token Request Status: 400
+DEBUG 2024-12-08 16:53:20,684 mpesa_utils 3648 26276 Token Response: 
+WARNING 2024-12-08 16:53:20,684 mpesa_utils 3648 26276 Access token retrieval failed: 400 Client Error: Bad Request for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+INFO 2024-12-08 16:53:20,685 mpesa_utils 3648 26276 Retrying in 2 seconds...
+INFO 2024-12-08 16:53:22,686 mpesa_utils 3648 26276 Attempting to retrieve MPesa access token (Attempt 3)
+DEBUG 2024-12-08 16:53:23,126 mpesa_utils 3648 26276 Token Request Status: 400
+DEBUG 2024-12-08 16:53:23,127 mpesa_utils 3648 26276 Token Response: 
+WARNING 2024-12-08 16:53:23,127 mpesa_utils 3648 26276 Access token retrieval failed: 400 Client Error: Bad Request for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+ERROR 2024-12-08 16:53:23,127 mpesa_utils 3648 26276 Failed to retrieve MPesa access token after all retries
+ERROR 2024-12-08 16:53:23,128 views 3648 26276 MPesa Payment Error: Access token retrieval failed: 400 Client Error: Bad Request for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+INFO 2024-12-08 17:20:35,321 mpesa_utils 14596 31528 Attempting to retrieve token with Key: ynbVo...
+ERROR 2024-12-08 17:20:37,778 mpesa_utils 14596 31528 Full Response Status: 400
+ERROR 2024-12-08 17:20:37,779 mpesa_utils 14596 31528 Full Response Headers: {'content-type': 'text/plain', 'x-request-id': '02445d19-7d46-48d1-b20c-1eb338c5f7db', 'content-length': '0', 'date': 'Sun, 08 Dec 2024 14:20:39 GMT', 'Set-Cookie': 'visid_incap_2742146=qGwBAZTrSAGsjVUjK6VAhjarVWcAAAAAQUIPAAAAAABOd3HwmGiP0ssT3w71lF7N; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=68S3WNbx/GPMWEV1K4g5DjarVWcAAAAA9+56vZyelDXtWOc4SrjBvg==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'X-Iinfo': '5-81866404-81866471 NNNN CT(109 110 0) RT(1733667637436 767) q(0 0 2 5) r(3 3) U16'}
+ERROR 2024-12-08 17:20:37,780 mpesa_utils 14596 31528 Full Response Content: 
+ERROR 2024-12-08 17:20:37,781 mpesa_utils 14596 31528 Detailed Request Exception: 400 Client Error: Bad Request for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+ERROR 2024-12-08 17:20:37,783 views 14596 31528 Unexpected payment error: 400 Client Error: Bad Request for url: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+ERROR 2024-12-08 17:23:13,926 views 2016 11032 Unexpected payment error: 'NoneType' object is not subscriptable
+ERROR 2024-12-08 17:24:23,840 views 324 24512 Unexpected payment error: 'NoneType' object is not subscriptable
+ERROR 2024-12-08 17:28:27,651 mpesa_utils 10828 20000 MPesa credentials are not configured in settings
+ERROR 2024-12-08 17:28:27,652 views 10828 20000 Unexpected payment error: MPESA_PASSKEY and MPESA_BUSINESS_SHORTCODE must be set in settings
+INFO 2024-12-08 17:32:13,899 mpesa_utils 18828 5548 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 17:32:13,899 mpesa_utils 18828 5548 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 17:32:15,033 mpesa_utils 18828 5548 Response Status: 200
+DEBUG 2024-12-08 17:32:15,034 mpesa_utils 18828 5548 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'e2bc19f0-04d2-4537-9237-90df4f43618c', 'date': 'Sun, 08 Dec 2024 14:32:16 GMT', 'Set-Cookie': 'visid_incap_2742146=DHrN++wDQPiAxmVcIo4fE++tVWcAAAAAQUIPAAAAAAD+/V94nm1NopgV5Ftp5CpH; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=VIJFVhGbJVY9d0l1K4g5Du+tVWcAAAAAhnj9cTGu7r7m3VXinhdrPg==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '6-89052610-89052631 NNYN CT(110 111 0) RT(1733668335185 226) q(0 0 2 -1) r(3 3) U16'}
+DEBUG 2024-12-08 17:32:15,035 mpesa_utils 18828 5548 Response Content: {
+            "access_token": "nIPwuiKF7YhFYF1rGGTvvUkBRaqE",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 17:32:15,037 mpesa_utils 18828 5548 MPesa access token retrieved successfully
+ERROR 2024-12-08 17:32:16,629 views 18828 5548 Unexpected payment error: (1146, "Table 'adventuresdb.adventureapp_payment' doesn't exist")
+INFO 2024-12-08 17:42:47,639 mpesa_utils 20100 22868 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 17:42:47,639 mpesa_utils 20100 22868 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 17:42:50,681 mpesa_utils 20100 22868 Response Status: 200
+DEBUG 2024-12-08 17:42:50,682 mpesa_utils 20100 22868 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'fa72e228-10bc-4e3b-85bb-f261ce6e8d25', 'date': 'Sun, 08 Dec 2024 14:42:52 GMT', 'Set-Cookie': 'visid_incap_2742146=r0A9auTkRnKNmtALaX6NmWuwVWcAAAAAQUIPAAAAAAB9tnl9QQuVJHWGC/9F3r8v; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=tdFiLXcdTBiNIU11K4g5DmuwVWcAAAAAEwacI+Oa5LVhWpxMOOpmpQ==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '7-99062938-99063097 NNYN CT(108 112 0) RT(1733668969149 1872) q(0 0 2 0) r(4 4) U16'}
+DEBUG 2024-12-08 17:42:50,683 mpesa_utils 20100 22868 Response Content: {
+            "access_token": "pYOihLGWcYIsAAE48tyk6GhlPXhB",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 17:42:50,685 mpesa_utils 20100 22868 MPesa access token retrieved successfully
+ERROR 2024-12-08 17:42:52,317 views 20100 22868 Unexpected payment error: Payment() got unexpected keyword arguments: 'method', 'transaction_code'
+INFO 2024-12-08 17:48:38,602 mpesa_utils 20768 10552 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 17:48:38,602 mpesa_utils 20768 10552 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 17:48:45,687 mpesa_utils 20768 10552 Response Status: 200
+DEBUG 2024-12-08 17:48:45,688 mpesa_utils 20768 10552 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'ac2497fd-23c9-40d0-a49b-d5f0ba281959', 'date': 'Sun, 08 Dec 2024 14:48:47 GMT', 'Set-Cookie': 'visid_incap_2742146=IO38gcJyRm2P5pDJHxfTFs6xVWcAAAAAQUIPAAAAAAC2FqKXVBMd6B8qkQOT3erd; expires=Sun, 07 Dec 2025 16:25:00 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=g2XQRoJM2REGMk91K4g5Ds6xVWcAAAAAFAbQ1QASVVxxL5HuqkHaiQ==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '11-63149643-63149690 NNYN CT(110 109 0) RT(1733669324211 1905) q(0 0 2 -1) r(3 3) U16'}
+DEBUG 2024-12-08 17:48:45,689 mpesa_utils 20768 10552 Response Content: {
+            "access_token": "u2BbBkgVgkWCGmA5vMephQcoRWGQ",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 17:48:45,690 mpesa_utils 20768 10552 MPesa access token retrieved successfully
+ERROR 2024-12-08 17:48:49,230 views 20768 10552 Unexpected payment error: Payment() got unexpected keyword arguments: 'transaction_code'
+INFO 2024-12-08 17:51:14,232 mpesa_utils 20076 28696 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 17:51:14,233 mpesa_utils 20076 28696 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 17:51:15,356 mpesa_utils 20076 28696 Response Status: 200
+DEBUG 2024-12-08 17:51:15,358 mpesa_utils 20076 28696 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '8675c0fc-c112-4288-a86d-3f088e8d1a80', 'date': 'Sun, 08 Dec 2024 14:51:16 GMT', 'Set-Cookie': 'visid_incap_2742146=JYDt78FLQMGHlItl/rfWxGSyVWcAAAAAQUIPAAAAAAC7R1DBGqzho4uMexprYOem; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=GSiYT5LWaF1uHVB1K4g5DmSyVWcAAAAAsDGTnSbP960G2tUUX/2i6Q==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '7-99105313-99104275 PNYN RT(1733669475354 712) q(0 0 0 -1) r(2 2) U16'}
+DEBUG 2024-12-08 17:51:15,359 mpesa_utils 20076 28696 Response Content: {
+            "access_token": "KymFJae6fWEwu8j24skAtwixfrwc",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 17:51:15,360 mpesa_utils 20076 28696 MPesa access token retrieved successfully
+ERROR 2024-12-08 17:51:16,898 views 20076 28696 Unexpected payment error: (1054, "Unknown column 'transaction_code' in 'field list'")
+INFO 2024-12-08 17:55:32,562 mpesa_utils 3516 31936 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 17:55:32,562 mpesa_utils 3516 31936 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 17:55:34,346 mpesa_utils 3516 31936 Response Status: 200
+DEBUG 2024-12-08 17:55:34,348 mpesa_utils 3516 31936 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '99b6cf6a-81a8-474e-b71c-6d15af736916', 'date': 'Sun, 08 Dec 2024 14:55:35 GMT', 'Set-Cookie': 'visid_incap_2742146=hOwLD7TTQECHUwIpZljuM2azVWcAAAAAQUIPAAAAAAAcbfMbmP1xb8q1IPyej6M2; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=OhfMQnx9fCAHslF1K4g5DmazVWcAAAAAxZCvLrAX5bjDv59fBhjLug==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '12-89603616-89603629 NNYN CT(109 112 0) RT(1733669734299 254) q(0 0 2 -1) r(4 4) U16'}
+DEBUG 2024-12-08 17:55:34,349 mpesa_utils 3516 31936 Response Content: {
+            "access_token": "Jz2aYGPIrkm4MP3zAS1E5wAnK0vI",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 17:55:34,350 mpesa_utils 3516 31936 MPesa access token retrieved successfully
+ERROR 2024-12-08 17:55:35,724 views 3516 31936 Unexpected payment error: (1048, "Column 'user_id' cannot be null")
+INFO 2024-12-08 18:01:21,609 mpesa_utils 15280 14928 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 18:01:21,609 mpesa_utils 15280 14928 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 18:01:23,679 mpesa_utils 15280 14928 Response Status: 200
+DEBUG 2024-12-08 18:01:23,679 mpesa_utils 15280 14928 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '3a8c8541-d580-483f-bb33-a04715ef422f', 'date': 'Sun, 08 Dec 2024 15:01:24 GMT', 'Set-Cookie': 'visid_incap_2742146=qyhDr3T3T5KAQdpFwvMrCcS0VWcAAAAAQUIPAAAAAADy777U5vRwVmqHtEac5XA5; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=5q37ViY+/gdcyVN1K4g5DsS0VWcAAAAArOy0wHQ0MhgowfM3F8inCA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '7-99153783-99153868 NNYN CT(109 110 0) RT(1733670082955 929) q(0 0 3 -1) r(4 4) U16'}
+DEBUG 2024-12-08 18:01:23,680 mpesa_utils 15280 14928 Response Content: {
+            "access_token": "X6iOmQNgGSYlvMDzUeZyWP0Cnxnx",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 18:01:23,680 mpesa_utils 15280 14928 MPesa access token retrieved successfully
+ERROR 2024-12-08 18:01:24,651 views 15280 14928 Unexpected payment error: payment_processing.html
+INFO 2024-12-08 18:16:58,120 mpesa_utils 24636 17984 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 18:16:58,121 mpesa_utils 24636 17984 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 18:16:58,958 mpesa_utils 24636 17984 Response Status: 200
+DEBUG 2024-12-08 18:16:58,959 mpesa_utils 24636 17984 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '6b633333-c29c-4e2d-8956-8f6c308b44f0', 'date': 'Sun, 08 Dec 2024 15:17:00 GMT', 'Set-Cookie': 'visid_incap_2742146=SuoZmN1FRiOQXljLPaMex2u4VWcAAAAAQUIPAAAAAAAPA+FhPHebS73qfs1+0q2l; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=t65xUJdyTgWchll1K4g5Dmu4VWcAAAAAxwBwtfJefe210vnwpOlL6w==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '6-89246565-89246576 NNYN CT(108 109 0) RT(1733671019248 183) q(0 0 2 1) r(4 4) U16'}
+DEBUG 2024-12-08 18:16:58,960 mpesa_utils 24636 17984 Response Content: {
+            "access_token": "APeYB2lLgGG9PIv5yqd6BBRJkZNF",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 18:16:58,962 mpesa_utils 24636 17984 MPesa access token retrieved successfully
+INFO 2024-12-08 18:26:07,282 mpesa_utils 24636 9784 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 18:26:07,283 mpesa_utils 24636 9784 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 18:26:08,871 mpesa_utils 24636 9784 Response Status: 200
+DEBUG 2024-12-08 18:26:08,872 mpesa_utils 24636 9784 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'd9ef123b-6430-4452-af8e-7684864681ca', 'date': 'Sun, 08 Dec 2024 15:26:09 GMT', 'Set-Cookie': 'visid_incap_2742146=mGoMJX9MQbWEZNHQGptez5G6VWcAAAAAQUIPAAAAAACScQtowhYnKUz3p4lvbod/; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=GzQ8YJwi+XtaGl11K4g5DpG6VWcAAAAAmGxQ5jbDDquUndW1ckhRew==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '7-99293888-99293932 NNYN CT(109 109 0) RT(1733671568531 528) q(0 0 2 -1) r(4 4) U16'}
+DEBUG 2024-12-08 18:26:08,874 mpesa_utils 24636 9784 Response Content: {
+            "access_token": "SxCVMylgmHevrrkI6UOnQeAANYP2",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 18:26:08,876 mpesa_utils 24636 9784 MPesa access token retrieved successfully
+INFO 2024-12-08 18:27:10,751 mpesa_utils 24636 28244 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 18:27:10,752 mpesa_utils 24636 28244 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 18:27:13,507 mpesa_utils 24636 28244 Response Status: 200
+DEBUG 2024-12-08 18:27:13,508 mpesa_utils 24636 28244 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '45683b1c-f752-4567-8802-100529a53735', 'date': 'Sun, 08 Dec 2024 15:27:13 GMT', 'Set-Cookie': 'visid_incap_2742146=SSs9cWN0Rn2YTQl5snOrf9C6VWcAAAAAQUIPAAAAAAAdC3D/vG9bO5qMaeNKVtjf; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=EzBCSLs5SxzJdF11K4g5DtC6VWcAAAAAt2R+aiYV8ctNqW0nAxG//Q==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '5-82140629-82140659 NNYN CT(112 112 0) RT(1733671631928 652) q(0 0 3 -1) r(4 4) U16'}
+DEBUG 2024-12-08 18:27:13,508 mpesa_utils 24636 28244 Response Content: {
+            "access_token": "mySnzYAJiQeed6HSIA4BtYcrFb7R",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 18:27:13,509 mpesa_utils 24636 28244 MPesa access token retrieved successfully
+ERROR 2024-12-08 18:27:18,177 views 24636 28244 Unexpected payment error: (1062, "Duplicate entry '44' for key 'booking_id'")
+INFO 2024-12-08 18:53:41,695 mpesa_utils 24636 13080 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 18:53:41,695 mpesa_utils 24636 13080 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 18:53:43,275 mpesa_utils 24636 13080 Response Status: 200
+DEBUG 2024-12-08 18:53:43,275 mpesa_utils 24636 13080 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'aee1cff1-0e48-42a2-916b-885a1d0c5a79', 'date': 'Sun, 08 Dec 2024 15:53:44 GMT', 'Set-Cookie': 'visid_incap_2742146=AlKo/YltQTijI1bp6FIs5QfBVWcAAAAAQUIPAAAAAAD+ivfv3ElEmCiDTIQETJ1s; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=ELnCWRJwGEGM02Z1K4g5DgfBVWcAAAAAMqwNqKH//wnLi4a53ZHwGA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '14-140622861-140622913 NNYN CT(114 113 0) RT(1733673223259 322) q(0 0 3 3) r(4 4) U16'}
+DEBUG 2024-12-08 18:53:43,275 mpesa_utils 24636 13080 Response Content: {
+            "access_token": "q8roc45wLABFJXQRq1MMMgDTjpT5",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 18:53:43,276 mpesa_utils 24636 13080 MPesa access token retrieved successfully
+INFO 2024-12-08 18:54:27,218 mpesa_utils 24636 20416 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 18:54:27,218 mpesa_utils 24636 20416 Using Consumer Key (first 5 chars): ynbVo
+ERROR 2024-12-08 18:54:38,384 mpesa_utils 24636 20416 MPesa Access Token Request Failed: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /oauth/v1/generate?grant_type=client_credentials (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000026B6170BC50>, 'Connection to sandbox.safaricom.co.ke timed out. (connect timeout=10)'))
+ERROR 2024-12-08 18:54:38,386 views 24636 20416 Unexpected payment error: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /mpesa/stkpush/v1/processrequest (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026B6170B750>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno 11001] getaddrinfo failed)"))
+INFO 2024-12-08 18:57:41,324 mpesa_utils 24636 7864 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 18:57:41,324 mpesa_utils 24636 7864 Using Consumer Key (first 5 chars): ynbVo
+ERROR 2024-12-08 18:57:41,325 mpesa_utils 24636 7864 MPesa Access Token Request Failed: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /oauth/v1/generate?grant_type=client_credentials (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026B6170BED0>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno 11001] getaddrinfo failed)"))
+ERROR 2024-12-08 18:57:41,327 views 24636 7864 Unexpected payment error: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /mpesa/stkpush/v1/processrequest (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026B6170B9D0>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno 11001] getaddrinfo failed)"))
+INFO 2024-12-08 19:11:02,801 mpesa_utils 24636 2240 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 19:11:02,801 mpesa_utils 24636 2240 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 19:11:04,223 mpesa_utils 24636 2240 Response Status: 200
+DEBUG 2024-12-08 19:11:04,224 mpesa_utils 24636 2240 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '56029f15-7d22-4e96-ac0f-3cd645fe275f', 'date': 'Sun, 08 Dec 2024 16:11:05 GMT', 'Set-Cookie': 'visid_incap_2742146=kn2eRF9aSgaOleQctUk2TRjFVWcAAAAAQUIPAAAAAABitW7Ldvoci6eTL3zlXnvS; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=Ya3RRJB6qEYQam11K4g5DhnFVWcAAAAAAOkhkURZ+0N2ALlcQq1mBA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '5-82321920-82321933 NNYN CT(406 113 0) RT(1733674264128 228) q(0 0 5 2) r(7 7) U16'}
+DEBUG 2024-12-08 19:11:04,224 mpesa_utils 24636 2240 Response Content: {
+            "access_token": "Rd1lKHAVVrmvaXpZqZ4Tl94GoMF0",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 19:11:04,225 mpesa_utils 24636 2240 MPesa access token retrieved successfully
+INFO 2024-12-08 19:13:43,819 mpesa_utils 24636 23664 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 19:13:43,820 mpesa_utils 24636 23664 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 19:13:44,808 mpesa_utils 24636 23664 Response Status: 200
+DEBUG 2024-12-08 19:13:44,809 mpesa_utils 24636 23664 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '7882fa41-fa85-4453-be88-f4a109e79063', 'date': 'Sun, 08 Dec 2024 16:13:46 GMT', 'Set-Cookie': 'visid_incap_2742146=kn2eRF9aSgaOleQctUk2TRjFVWcAAAAAQUIPAAAAAABitW7Ldvoci6eTL3zlXnvS; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=EdtULoQK7FoQam11K4g5DrnFVWcAAAAAFVYhn3Zd4stA6nrhXhhBiA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '0-35804177-35804183 NNYN CT(108 108 0) RT(1733674425071 202) q(0 0 2 0) r(4 4) U16'}
+DEBUG 2024-12-08 19:13:44,809 mpesa_utils 24636 23664 Response Content: {
+            "access_token": "vqoh9BHZifAa6gRA8cqqwZrZ7Gpm",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 19:13:44,809 mpesa_utils 24636 23664 MPesa access token retrieved successfully
+ERROR 2024-12-08 19:13:46,704 views 24636 23664 Unexpected payment error: (1062, "Duplicate entry '49' for key 'booking_id'")
+INFO 2024-12-08 19:13:49,032 mpesa_utils 24636 25484 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 19:13:49,032 mpesa_utils 24636 25484 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 19:13:51,269 mpesa_utils 24636 25484 Response Status: 200
+DEBUG 2024-12-08 19:13:51,269 mpesa_utils 24636 25484 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '22937368-8eeb-45cc-bdef-f3efaaea7a72', 'date': 'Sun, 08 Dec 2024 16:13:51 GMT', 'Set-Cookie': 'visid_incap_2742146=HiWsO3ptRpmwpycubXsuK77FVWcAAAAAQUIPAAAAAABfxTS9jJ90tbIN3sE5qyzf; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=w+GEGLHcxSe+cm51K4g5Dr7FVWcAAAAAfSXjcnV/qDGZU+bBfOdqAw==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '7-99506450-99506469 NNYN CT(109 110 0) RT(1733674430286 238) q(0 0 2 -1) r(3 3) U16'}
+DEBUG 2024-12-08 19:13:51,269 mpesa_utils 24636 25484 Response Content: {
+            "access_token": "QhnhzYlcPGeZm5n0I7AAgqOXhMTe",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 19:13:51,270 mpesa_utils 24636 25484 MPesa access token retrieved successfully
+ERROR 2024-12-08 19:13:53,133 views 24636 25484 STK Push failed: {
+                    "requestId":"b54f-471d-93d9-f7f3bf3f7c0e128689",
+                    "errorCode": "500.001.1001",
+                    "errorMessage": "Unable to lock subscriber, a transaction is already in process for the current subscriber"
+                }
+            
+INFO 2024-12-08 19:16:02,159 mpesa_utils 24636 8020 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 19:16:02,159 mpesa_utils 24636 8020 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 19:16:05,520 mpesa_utils 24636 8020 Response Status: 200
+DEBUG 2024-12-08 19:16:05,520 mpesa_utils 24636 8020 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '2f76a45b-5ddc-46af-97c9-ccd88ae98d14', 'date': 'Sun, 08 Dec 2024 16:16:06 GMT', 'Set-Cookie': 'visid_incap_2742146=kR3B3jMyT22vVUVefmnOJEXGVWcAAAAAQUIPAAAAAAC8ZC0m7umM5aLRaqLNEhdS; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=SV4dDgHjTDscUm91K4g5DkXGVWcAAAAAi9V1AJBfSmUVpvbc/IuEIw==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '13-109111413-109111470 NNYN CT(111 110 0) RT(1733674564439 679) q(0 0 2 -1) r(4 4) U16'}
+DEBUG 2024-12-08 19:16:05,521 mpesa_utils 24636 8020 Response Content: {
+            "access_token": "ODUppZzgDfsxlOqM8g7BQBXHiJof",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 19:16:05,521 mpesa_utils 24636 8020 MPesa access token retrieved successfully
+INFO 2024-12-08 19:24:50,971 mpesa_utils 19440 11240 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 19:24:50,971 mpesa_utils 19440 11240 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 19:24:53,585 mpesa_utils 19440 11240 Response Status: 200
+DEBUG 2024-12-08 19:24:53,585 mpesa_utils 19440 11240 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '95866464-07ff-459f-bcd4-7c5a7533e751', 'date': 'Sun, 08 Dec 2024 16:24:54 GMT', 'Set-Cookie': 'visid_incap_2742146=91eRN4xLRmK8YUmjDKpPg1bIVWcAAAAAQUIPAAAAAACEytw6ZESJP1+yhyvVkevq; expires=Sun, 07 Dec 2025 16:25:07 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=fNvJA8d1kFly2HJ1K4g5DlbIVWcAAAAAasYH2gNFS/dOXbaXNG2jTQ==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '3-62977770-62975472 PNYN RT(1733675093409 663) q(0 0 0 -1) r(2 2) U16'}
+DEBUG 2024-12-08 19:24:53,586 mpesa_utils 19440 11240 Response Content: {
+            "access_token": "pJPmmSUTwATGTYCFjVnmlRq6orFe",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 19:24:53,586 mpesa_utils 19440 11240 MPesa access token retrieved successfully
+ERROR 2024-12-08 19:24:54,878 views 19440 11240 Unexpected payment error: (1062, "Duplicate entry '51' for key 'booking_id'")
+INFO 2024-12-08 19:26:09,960 mpesa_utils 19440 21032 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 19:26:09,961 mpesa_utils 19440 21032 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 19:26:11,252 mpesa_utils 19440 21032 Response Status: 200
+DEBUG 2024-12-08 19:26:11,252 mpesa_utils 19440 21032 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '84103cf5-51ab-4415-893d-b6e1736e6aa5', 'date': 'Sun, 08 Dec 2024 16:26:12 GMT', 'Set-Cookie': 'visid_incap_2742146=u/4+5zpGTLiCU4EAywoDyaTIVWcAAAAAQUIPAAAAAAAHwBcPCmlQDbTpxURW2WJm; expires=Mon, 08 Dec 2025 16:25:08 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=vlYHDwMiUHVzX3N1K4g5DqTIVWcAAAAAviGY9Sa20+LuLhSzg5oe6w==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '4-74422909-74422927 NNYN CT(113 113 0) RT(1733675171340 357) q(0 0 3 -1) r(4 4) U16'}
+DEBUG 2024-12-08 19:26:11,253 mpesa_utils 19440 21032 Response Content: {
+            "access_token": "XZPKOWotwIfc0GZgsq2zXygJx6TV",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 19:26:11,253 mpesa_utils 19440 21032 MPesa access token retrieved successfully
+INFO 2024-12-08 19:44:33,308 mpesa_utils 14768 12084 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 19:44:33,309 mpesa_utils 14768 12084 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 19:44:34,574 mpesa_utils 14768 12084 Response Status: 200
+DEBUG 2024-12-08 19:44:34,574 mpesa_utils 14768 12084 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'b7509bac-4c06-4df1-bc59-d22ac559a542', 'date': 'Sun, 08 Dec 2024 16:44:36 GMT', 'Set-Cookie': 'visid_incap_2742146=RAIKfoi6QbKyEW/zCP4cUvPMVWcAAAAAQUIPAAAAAACU6554tDv+ZUM0dVN3WGz9; expires=Mon, 08 Dec 2025 16:25:08 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=uUAqCIdXFRHud3p1K4g5DvPMVWcAAAAAhu2iA6u6PxOMGqPsiblT7A==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '14-140982507-140982538 NNYN CT(112 113 0) RT(1733676274793 238) q(0 0 2 0) r(4 4) U16'}
+DEBUG 2024-12-08 19:44:34,575 mpesa_utils 14768 12084 Response Content: {
+            "access_token": "5pjaGkB6NW4mTP6dRiUbjAGh0Eej",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 19:44:34,575 mpesa_utils 14768 12084 MPesa access token retrieved successfully
+ERROR 2024-12-08 19:44:39,804 views 14768 12084 Unexpected payment error: (1062, "Duplicate entry '52' for key 'booking_id'")
+INFO 2024-12-08 19:46:44,292 mpesa_utils 14768 30200 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 19:46:44,293 mpesa_utils 14768 30200 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 19:46:46,062 mpesa_utils 14768 30200 Response Status: 200
+DEBUG 2024-12-08 19:46:46,062 mpesa_utils 14768 30200 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'b36ac2b4-9b3d-42f0-9ef8-c49bd62da96f', 'date': 'Sun, 08 Dec 2024 16:46:47 GMT', 'Set-Cookie': 'visid_incap_2742146=RAIKfoi6QbKyEW/zCP4cUvPMVWcAAAAAQUIPAAAAAACU6554tDv+ZUM0dVN3WGz9; expires=Mon, 08 Dec 2025 16:25:09 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=UkP9TCdpEAzud3p1K4g5DnbNVWcAAAAAzg5zDg5ab3b+D+TLzC/mqQ==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '8-20367944-20367949 NNYN CT(113 113 0) RT(1733676405866 578) q(0 0 2 0) r(4 4) U16'}
+DEBUG 2024-12-08 19:46:46,063 mpesa_utils 14768 30200 Response Content: {
+            "access_token": "EEIZLQ8ueGSwINunAtbugial4EQi",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 19:46:46,063 mpesa_utils 14768 30200 MPesa access token retrieved successfully
+INFO 2024-12-08 20:10:47,666 mpesa_utils 5672 13216 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-08 20:10:47,667 mpesa_utils 5672 13216 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-08 20:10:56,491 mpesa_utils 5672 13216 Response Status: 200
+DEBUG 2024-12-08 20:10:56,492 mpesa_utils 5672 13216 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '767a1189-b7c7-4086-bbd1-1e742b7be67a', 'date': 'Sun, 08 Dec 2024 17:10:57 GMT', 'Set-Cookie': 'visid_incap_2742146=wlzqR+JhQ6CuXHP9RK7KBCDTVWcAAAAAQUIPAAAAAADZ6byjNnZH695BmqNQTosY; expires=Mon, 08 Dec 2025 16:25:08 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=/6TVQLVptwgXXIR1K4g5DiHTVWcAAAAAgYojN8U3XVpJRCyxzWGrfA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '1-46387893-46388260 NNYN CT(113 112 0) RT(1733677850059 6912) q(0 0 2 0) r(4 4) U16'}
+DEBUG 2024-12-08 20:10:56,492 mpesa_utils 5672 13216 Response Content: {
+            "access_token": "Zd8G9GpBI9qpq0Ya29qgluiDBz7l",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-08 20:10:56,492 mpesa_utils 5672 13216 MPesa access token retrieved successfully
+INFO 2024-12-09 03:41:06,133 mpesa_utils 8004 3596 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-09 03:41:06,133 mpesa_utils 8004 3596 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-09 03:41:06,735 mpesa_utils 8004 3596 Response Status: 200
+DEBUG 2024-12-09 03:41:06,735 mpesa_utils 8004 3596 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '0e3abd68-8703-424e-a678-eb92785994fd', 'date': 'Mon, 09 Dec 2024 00:41:09 GMT', 'Set-Cookie': 'visid_incap_2742146=lqkZf5Q/Rw+ethH0WkF6BqQ8VmcAAAAAQUIPAAAAAADoBwSd4M8vugwXqiHXiaJ9; expires=Mon, 08 Dec 2025 16:25:08 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=7DjCF947IhGltOp1K4g5DqQ8VmcAAAAAYtKTS/OmHuh7MJATDtCG6w==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '1-47021861-47021865 NNYN CT(66 66 0) RT(1733704868416 130) q(0 0 1 0) r(2 2) U16'}
+DEBUG 2024-12-09 03:41:06,735 mpesa_utils 8004 3596 Response Content: {
+            "access_token": "VUHTCAmB9nBsdTFDYoHAAFz85XeA",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-09 03:41:06,736 mpesa_utils 8004 3596 MPesa access token retrieved successfully
+INFO 2024-12-09 12:15:35,640 mpesa_utils 17568 12456 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-09 12:15:35,641 mpesa_utils 17568 12456 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-09 12:15:37,400 mpesa_utils 17568 12456 Response Status: 200
+DEBUG 2024-12-09 12:15:37,400 mpesa_utils 17568 12456 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '988d199a-3884-4d44-ba9e-fe2ecf334bc9', 'date': 'Mon, 09 Dec 2024 09:15:36 GMT', 'Set-Cookie': 'visid_incap_2742146=3H2LGz9XStWahfl+8bys/je1VmcAAAAAQUIPAAAAAAA+er4so69e/fRXOvTJ/u8k; expires=Mon, 08 Dec 2025 16:25:08 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=AKHZeBi9oT/yKX12K4g5Dje1VmcAAAAAgR6hvGYQTXU9Ju4SfPgmRg==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '4-77375191-77375259 NNYN CT(63 63 0) RT(1733735734694 733) q(0 0 1 0) r(2 2) U16'}
+DEBUG 2024-12-09 12:15:37,401 mpesa_utils 17568 12456 Response Content: {
+            "access_token": "QwOkl4OzqZLT3NxCHF2PmrpZNV6k",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-09 12:15:37,401 mpesa_utils 17568 12456 MPesa access token retrieved successfully
+INFO 2024-12-09 15:58:33,002 mpesa_utils 17568 20780 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-09 15:58:33,003 mpesa_utils 17568 20780 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-09 15:58:33,638 mpesa_utils 17568 20780 Response Status: 200
+DEBUG 2024-12-09 15:58:33,639 mpesa_utils 17568 20780 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '5128a7e3-d27d-4fcf-adc5-3a09bfb887da', 'date': 'Mon, 09 Dec 2024 12:58:33 GMT', 'Set-Cookie': 'visid_incap_2742146=DDZk7nSDTpuSuwilVGVPo3jpVmcAAAAAQUIPAAAAAACA4r9eBTnY+znFo36W4dTI; expires=Mon, 08 Dec 2025 16:25:08 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_1025_2742146=45IqJeUVqkAHCOJ2K4g5DnjpVmcAAAAAguwXV14kF/V20lmKNazUuQ==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '10-50240239-50240294 NNYN CT(67 68 0) RT(1733749112201 100) q(0 0 1 10) r(2 2) U16'}
+DEBUG 2024-12-09 15:58:33,639 mpesa_utils 17568 20780 Response Content: {
+            "access_token": "UHMvvfF2GbGV2beYryGDLx3vBJoT",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-09 15:58:33,640 mpesa_utils 17568 20780 MPesa access token retrieved successfully
+INFO 2024-12-09 16:07:54,795 mpesa_utils 17568 15392 Attempting to retrieve access token from https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+DEBUG 2024-12-09 16:07:54,795 mpesa_utils 17568 15392 Using Consumer Key (first 5 chars): ynbVo
+DEBUG 2024-12-09 16:07:55,600 mpesa_utils 17568 15392 Response Status: 200
+DEBUG 2024-12-09 16:07:55,600 mpesa_utils 17568 15392 Response Headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'aef29df7-21ca-4002-ac17-d3ba80b35877', 'date': 'Mon, 09 Dec 2024 13:07:55 GMT', 'Set-Cookie': 'visid_incap_2742146=iJU6VxmjQI2vRGsVf5IEcavrVmcAAAAAQUIPAAAAAACuxVYqEiBJViZqIZb/rtOH; expires=Mon, 08 Dec 2025 15:20:56 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6545_2742146=C9hTfUQrsVA2xb+cA4PUWqvrVmcAAAAAZZib7cH29bO912qabeu05Q==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '16-4776148-4776166 NNYN CT(83 85 0) RT(1733749674818 189) q(0 0 1 1) r(3 3) U16'}
+DEBUG 2024-12-09 16:07:55,601 mpesa_utils 17568 15392 Response Content: {
+            "access_token": "G5o9D6IxLDOdj4qOYC0JdcHczxS4",
+            "expires_in": "3599"
+        }
+        
+INFO 2024-12-09 16:07:55,601 mpesa_utils 17568 15392 MPesa access token retrieved successfully
